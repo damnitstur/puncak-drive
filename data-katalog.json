@@ -1,0 +1,85 @@
+{  "katalog": {
+    "dummy": {
+      "Avanza-1": {
+        "name": {
+          "$type": "string",
+          "$value": "avanza"
+        },
+        "transmisi": {
+          "$type": "string",
+          "$value": "manual"
+        },
+        "capacity": {
+          "$type": "string",
+          "$value": "7"
+        }
+      },
+      "avanza new": {
+        "name": {
+          "$type": "string",
+          "$value": "avanza new"
+        },
+        "transmisi": {
+          "$type": "string",
+          "$value": "otomatis"
+        },
+        "capacity": {
+          "$type": "string",
+          "$value": "7"
+        },
+        "pirce": {
+          "$type": "string",
+          "$value": "500"
+        }
+      },
+      "rush": {
+        "name": {
+          "$type": "string",
+          "$value": "rush"
+        }
+      },
+      "hiace": {
+        "name": {
+          "$type": "string",
+          "$value": "hiace"
+        },
+        "transmisi": {
+          "$type": "string",
+          "$value": "manual"
+        },
+        "capacity": {
+          "$type": "string",
+          "$value": "14-15"
+        }
+      },
+      "inova": {
+        "name": {
+          "$type": "string",
+          "$value": "invova"
+        },
+        "transmisi": {
+          "$type": "string",
+          "$value": "otomatis"
+        },
+        "capacity": {
+          "$type": "string",
+          "$value": "7"
+        }
+      },
+      "avanza": {
+        "name": {
+          "$type": "string",
+          "$value": "avanza"
+        },
+        "tranmisi": {
+          "$type": "string",
+          "$value": "manual / otomatis"
+        },
+        "capacity": {
+          "$type": "string",
+          "$value": "7"
+        }
+      }
+    }
+  }
+}

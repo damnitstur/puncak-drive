@@ -1,0 +1,42 @@
+{
+  "bookedSchedules": [
+    {
+      "carId": "avanza",
+      "carName": "Toyota Avanza",
+      "bookedRanges": [
+        { "offsetDaysFromTodayStart": 1, "durationDays": 2, "reason": "Booked by Customer #102" },
+        { "offsetDaysFromTodayStart": 5, "durationDays": 3, "reason": "Maintenance & Cleaning" }
+      ]
+    },
+    {
+      "carId": "avanza new",
+      "carName": "Toyota Avanza New",
+      "bookedRanges": [
+        { "offsetDaysFromTodayStart": 2, "durationDays": 1, "reason": "Booked by Customer #105" },
+        { "offsetDaysFromTodayStart": 8, "durationDays": 2, "reason": "Booked by Customer #110" }
+      ]
+    },
+    {
+      "carId": "inova",
+      "carName": "Innova Reborn",
+      "bookedRanges": [
+        { "offsetDaysFromTodayStart": 0, "durationDays": 2, "reason": "On Trip to Puncak" },
+        { "offsetDaysFromTodayStart": 4, "durationDays": 2, "reason": "Booked by Customer #108" }
+      ]
+    },
+    {
+      "carId": "hiace",
+      "carName": "Toyota HiAce",
+      "bookedRanges": [
+        { "offsetDaysFromTodayStart": 3, "durationDays": 4, "reason": "Group Tour Booking" }
+      ]
+    },
+    {
+      "carId": "rush",
+      "carName": "Toyota Rush",
+      "bookedRanges": [
+        { "offsetDaysFromTodayStart": 6, "durationDays": 2, "reason": "Booked by Customer #112" }
+      ]
+    }
+  ]
+}

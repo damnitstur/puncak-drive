@@ -1,0 +1,91 @@
+{
+  "brandName": {
+    "$type": "string",
+    "$value": "Puncak Drive"
+  },
+  "tagline": {
+    "$type": "string",
+    "$value": "Rent Car For Less"
+  },
+  "header": {
+    "menu": {
+      "$type": "string",
+      "$value": "Home"
+    },
+    "menu 2": {
+      "$type": "string",
+      "$value": "car"
+    },
+    "menu 3": {
+      "$type": "string",
+      "$value": "our services"
+    },
+    "button": {
+      "$type": "string",
+      "$value": "contact"
+    }
+  },
+
+  "hero": {
+  "menu hero col-1": {
+      "avanza": {
+        "$type": "string",
+        "$value": "All New Avanza"
+      },
+      "invova": {
+        "$type": "string",
+        "$value": "Inova rebon matic"
+      },
+      "hiace": {
+        "$type": "string",
+        "$value": "hiace"
+      },
+      "calya": {
+        "$type": "string",
+        "$value": "calya"
+      },
+      "rush": {
+        "$type": "string",
+        "$value": "rush"
+      }
+    },
+  "col-2" : {
+    "tagline": {
+      "$type": "string",
+      "$value": "Rent car for less"
+    },
+  "title filter": {
+        "location": {
+          "$type": "string",
+          "$value": "Choose a location"
+        },
+        "date": {
+          "$type": "string",
+          "$value": "Pick-up Date"
+        },
+        "car model": {
+          "$type": "string",
+          "$value": "Car Model"
+        },
+        "date pickup": {
+          "$type": "string",
+          "$value": "Pick-up Location"
+        },
+        "button": {
+          "$type": "string",
+          "$value": "Search"
+        }
+    }
+    },
+  "col-3" : {
+  "headline moto": {
+      "$type": "string",
+      "$value": "Drive Beyond the Peak"
+    },
+    "moto p": {
+      "$type": "string",
+      "$value": "Trusted car Rentals white a Seamless Booking Experience"
+    }
+    }
+  }
+}

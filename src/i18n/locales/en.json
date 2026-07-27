@@ -1,0 +1,280 @@
+{
+  "nav": {
+    "home": "Home",
+    "cars": "Car Fleet",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "badge": "Official Puncak Car Rental",
+    "tagline": "Drive Beyond the Peak",
+    "rentCar": "RENT A CAR",
+    "forLess": "SAVE MORE",
+    "subtext": "Trusted car rental with experienced drivers & a seamless booking experience.",
+    "filterLocation": "Pickup Location",
+    "selectLocation": "Select Location",
+    "typeLocationPlaceholder": "Type destination location...",
+    "filterDate": "Pickup Date",
+    "selectDate": "Select Date",
+    "filterModel": "Car Model",
+    "searchBtn": "Search Cars",
+    "popularLocations": "Popular Locations"
+  },
+  "catalog": {
+    "title": "Car Fleet Catalog",
+    "subtitle": "Clean, well-maintained vehicles ready for your journey.",
+    "allModels": "All Models",
+    "allTransmissions": "All Transmissions",
+    "manual": "Manual",
+    "automatic": "Automatic",
+    "available": "Available Today",
+    "booked": "Booked",
+    "ratePerDay": "Rate / Day",
+    "detailBtn": "Details",
+    "bookBtn": "Book Now",
+    "seats": "Seats",
+    "noCars": "No fleet matches the selected filter",
+    "resetFilter": "Reset Filter",
+    "pickupLocPlaceholder": "Type location (e.g., Puncak, Bandung...)",
+    "showing": "Showing",
+    "fleetSelection": "selected fleets",
+    "popularFilter": "Filter: Popular Only",
+    "popularBtn": "Popular"
+  },
+  "detail": {
+    "back": "Back to Fleet Catalog",
+    "noticeTitle": "Special Car + Driver Rental Service (No Self-Drive)",
+    "noticeDesc": "All Puncak Drive fleets are rented with Professional Drivers included. We do not provide self-drive rentals for your safety and comfort on mountain routes.",
+    "driverIncluded": "+ Driver Included",
+    "rateTitle": "Rate / 12 - 24 Hours",
+    "categoryTitle": "Fleet Category",
+    "description": "Vehicles in prime condition, cleaned and sanitized before every delivery. Accompanied by friendly local drivers who master Puncak alternative routes.",
+    "specTitle": "Vehicle Specifications",
+    "driverService": "Driver Service",
+    "driverIncludedVal": "Driver Included",
+    "capacity": "Seating Capacity",
+    "passengers": "Passengers",
+    "transmission": "Transmission Type",
+    "hygiene": "Cleanliness Condition",
+    "hygieneVal": "100% Clean & Fresh",
+    "inclusionsTitle": "Rental Package Facilities Detail",
+    "includedHeading": "Included in Price:",
+    "incCar": "Ready-to-Use Car Unit",
+    "incDriver": "Professional Driver Service",
+    "incAc": "Double Blower AC Comfort",
+    "excludedHeading": "Excluded:",
+    "excFuel": "Fuel (Gasoline)",
+    "excToll": "Tolls & Tourist Parking",
+    "excMeal": "Driver Meal Allowance",
+    "advantagesTitle": "Puncak Drive Service Advantages:",
+    "adv1": "Polite, experienced, honest, and punctual driver.",
+    "adv2": "Assistance with villa, culinary, and popular tourist spot recommendations.",
+    "adv3": "Relaxing journey without fatigue from driving in mountain traffic.",
+    "proceedBtn": "Proceed to Reservation Form",
+    "noPrepayment": "No prepayment required. Reservation confirmed directly via WhatsApp."
+  },
+  "booking": {
+    "back": "Back to Vehicle Details",
+    "badge": "Official Booking Form",
+    "title": "Car Rental Reservation",
+    "subtitle": "Fill in pickup date and location details to confirm your order via WhatsApp.",
+    "carDetails": "Fleet Details & Total Price",
+    "carCleanDesc": "Well-maintained, clean unit ready for your trip.",
+    "seats": "Seats",
+    "capacity": "Capacity",
+    "transmission": "Transmission",
+    "dailyRate": "Rental Price / Day",
+    "duration": "Rental Duration",
+    "days": "Days",
+    "total": "Total Payment",
+    "trust1": "No Hidden Fees & Guaranteed Clean Vehicle",
+    "trust2": "24/7 Customer Support Ready to Assist",
+    "formTitle": "Customer & Pickup Information",
+    "formSubtitle": "Fill out the information below to confirm fleet availability.",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email (e.g., name@email.com)",
+    "pickupDate": "Pickup Date",
+    "pickupLocation": "Pickup Location (Optional)",
+    "locationPlaceholder": "Type location (e.g., Bogor Station, Puncak Hotel...)",
+    "detectGps": "Detect My GPS Location",
+    "locatingGps": "Locating GPS...",
+    "nominatimTitle": "Map Search Results",
+    "googleMapsTitle": "Open in Google Maps",
+    "notes": "Special Requests / Notes",
+    "notesPlaceholder": "Enter notes like pickup time, driver request, etc.",
+    "submitBtn": "Confirm & Book via WhatsApp"
+  },
+  "services": {
+    "badge": "Featured Services",
+    "title": "Find Your Transportation Choice",
+    "subtitle": "Puncak Drive provides flexible, high-quality transportation service choices.",
+    "daily": "Daily Car Rental",
+    "dailyDesc": "Flexible daily rental service for short trips or family visits.",
+    "weekly": "Weekly Car Rental",
+    "weeklyDesc": "More economical weekly rental options for business trips or extended vacations.",
+    "monthly": "Monthly Car Rental",
+    "monthlyDesc": "Long-term rental solutions for companies, office operations, or business projects.",
+    "driver": "Car Rental with Driver",
+    "driverDesc": "Experienced, friendly drivers who know local routes for effortless travel.",
+    "airport": "Airport Transfer",
+    "airportDesc": "Punctual pickup and drop-off service to Soekarno-Hatta / Halim Airport.",
+    "tour": "Tour Travel",
+    "tourDesc": "Tour packages to popular destinations in Puncak, Bogor, and surrounding areas.",
+    "business": "Business Travel",
+    "businessDesc": "Premium fleet service for business operational needs and official visits.",
+    "charter": "Vehicle Charter",
+    "charterDesc": "Special charter service for groups, large families, weddings, and events.",
+    "commitmentBadge": "Puncak Drive Commitment",
+    "commitmentHeadline": "Safe, Comfortable, and Reliable Travel Every Kilometer",
+    "commitmentSubtext": "We prioritize your safety and satisfaction through high-quality fleets with regular maintenance and professional drivers.",
+    "trust3": "Experienced & Friendly Drivers",
+    "trust4": "Clean & Prime Condition Fleets",
+    "contactSupport": "Contact Support"
+  },
+  "about": {
+    "badge": "Official Company Profile",
+    "title": "About Puncak Drive",
+    "subtitle": "Your trusted car rental transportation partner in Puncak, Bogor, and surrounding areas with high service standards.",
+    "address": "Jl. Raya Puncak Gadog, Megamendung, Bogor, West Java.",
+    "motto": "Drive Beyond the Peak.",
+    "subMotto": "More than just a journey, we deliver you to the finest travel experiences.",
+    "storyBadge": "Company History & Profile",
+    "storyTitle": "Your Primary Mobility Partner in Puncak & Bogor",
+    "storyText": "Puncak Drive is a leading car rental company committed to delivering safe, comfortable, and reliable transportation services. We understand that every journey has an important purpose, which is why we provide high-quality fleets with professional service to fulfill individual, family, tourist, and corporate needs.\n\nWith customer satisfaction as our top priority, Puncak Drive continues to grow into a dependable mobility partner through fast, transparent, and comfort-oriented services.",
+    "visionBadge": "Company Vision",
+    "visionText": "To be the most trusted car rental company delivering the finest driving experiences through professional service, high-quality fleets, and service innovation.",
+    "missionBadge": "Company Missions",
+    "missionList": [
+      "Deliver fast, friendly, and professional service.",
+      "Provide clean, safe, and prime-condition vehicle fleets.",
+      "Build long-term relationships based on customer trust.",
+      "Provide flexible transportation solutions tailored to customer needs.",
+      "Continuously innovate following transportation industry technology advancements."
+    ],
+    "targetTitle": "Our Main Customer Targets",
+    "targetCustomers": [
+      "Individuals",
+      "Families",
+      "Tourists",
+      "Corporates",
+      "Government Institutions",
+      "Event Organizers",
+      "Travel Partners"
+    ],
+    "whyTitle": "Why Choose Puncak Drive?",
+    "whyList": [
+      {
+        "title": "Quality Fleets",
+        "description": "All vehicles are regularly maintained to ensure safety and comfort."
+      },
+      {
+        "title": "Transparent Pricing",
+        "description": "No hidden fees with competitive rates."
+      },
+      {
+        "title": "Professional Service",
+        "description": "Our team is ready to assist customer needs with quick responses."
+      },
+      {
+        "title": "Flexible Options",
+        "description": "Daily, weekly, and monthly rental choices according to your needs."
+      },
+      {
+        "title": "Punctual Delivery",
+        "description": "We hold punctuality in high regard across all services."
+      },
+      {
+        "title": "Customer Support",
+        "description": "Ready to assist customers from booking until your journey concludes."
+      }
+    ],
+    "valuesBadge": "Core Values",
+    "valuesTitle": "Company Core Values",
+    "valuesList": [
+      {
+        "name": "Trust",
+        "description": "Building trust through honest and professional service."
+      },
+      {
+        "name": "Safety",
+        "description": "Customer safety is our absolute priority."
+      },
+      {
+        "name": "Quality",
+        "description": "Delivering top quality in both vehicle fleets and customer service."
+      },
+      {
+        "name": "Commitment",
+        "description": "Committed to delivering satisfying travel experiences."
+      }
+    ],
+    "contactBadge": "Contact & Visit Us",
+    "contactTitle": "Office Location & Customer Support",
+    "contactArea": "Jabodetabek & Puncak"
+  },
+  "terms": {
+    "badge": "Puncak Drive Official Terms",
+    "title": "Terms & Conditions",
+    "updated": "Last updated: July 27, 2026 — Official operational terms for Puncak Drive car rental service.",
+    "sec1Title": "1. Driver Requirement (Professional Driver Only)",
+    "sec1Text": "All Puncak Drive vehicle fleets operating in Puncak, Bogor, Cianjur, and surrounding areas must be accompanied by an official professional Driver from Puncak Drive. This policy guarantees safety and comfort on steep, traffic-prone mountain routes. Self-drive rentals are strictly limited to corporate partners with full verification.",
+    "sec2Title": "2. Required Documents & Identity",
+    "sec2Text": "Renters must provide valid official identification (ID Card / Passport & KITAS) along with pickup address details and an active WhatsApp emergency contact number.",
+    "sec3Title": "3. Booking & Payment Procedure",
+    "sec3Text": "Reservations are valid once official confirmation is received from Puncak Drive WhatsApp Admin. Payment can be made via official bank transfer or cash per official invoice.",
+    "sec4Title": "4. Cancellation & Rescheduling Policy",
+    "sec4Text": "Cancellations made at least 24 hours prior to pickup time (D-1) incur no fee. Same-day cancellations may incur a 50% administrative fee.",
+    "sec5Title": "5. Responsibility & Insurance",
+    "sec5Text": "All our vehicles are insured and regularly undergo routine roadworthiness inspections. Puncak Drive is responsible for fleet maintenance and driver performance during rental periods."
+  },
+  "privacy": {
+    "badge": "Puncak Drive Privacy Policy",
+    "title": "Privacy Policy",
+    "updated": "Last updated: July 27, 2026 — Customer data confidentiality and protection guarantee document.",
+    "sec1Title": "1. Collection of Personal Information",
+    "sec1Text": "Puncak Drive collects personal data such as Full Name, WhatsApp Contact Number, Email Address, Reservation Date, and Pickup Location solely for rental processing, driver coordination, and invoice generation.",
+    "sec2Title": "2. Data Protection & Security",
+    "sec2Text": "We apply digital encryption security standards to protect your data from unauthorized access, disclosure, or misuse. Your information is stored on secure closed servers accessible only by authorized personnel.",
+    "sec3Title": "3. Third-Party Confidentiality",
+    "sec3Text": "Puncak Drive guarantees never selling, renting, sharing, or trading customer personal data to any third party for commercial marketing. Data is shared exclusively with assigned Drivers for pickup coordination.",
+    "sec4Title": "4. Customer Rights Over Data",
+    "sec4Text": "Customers have the right to request updates, corrections, or deletion of all personal data from our systems after rental periods complete by contacting Customer Support."
+  },
+  "cookies": {
+    "badge": "Puncak Drive Cookie Policy",
+    "title": "Cookie Policy",
+    "updated": "Last updated: July 27, 2026 — Information on cookie usage and local storage on Puncak Drive website.",
+    "sec1Title": "1. What Are Cookies",
+    "sec1Text": "Cookies are small text files stored on your browser when visiting the Puncak Drive website. Cookies help remember preference settings so future visits are faster and more efficient.",
+    "sec2Title": "2. Cookie Usage on Our Website",
+    "sec2Text": "Puncak Drive uses essential functional cookies exclusively to store user language preference choices (i18n: Indonesian, English, Arabic) and maintain fleet filter selections across pages.",
+    "sec3Title": "3. Disabling & Managing Cookies",
+    "sec3Text": "You have the right to decline or delete browser cookies at any time via your browser settings menu. Note that disabling essential cookies may affect automatic language memory."
+  },
+  "sitemap": {
+    "badge": "Puncak Drive Navigation Index",
+    "title": "Sitemap",
+    "sub": "Complete navigation structure of all official Puncak Drive Car Rental pages.",
+    "mainTitle": "Main Pages & Services",
+    "legalTitle": "Legal Documents & Verification Index",
+    "home": "Home Page",
+    "catalog": "Car Catalog",
+    "services": "Our Services",
+    "about": "Company Profile",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "contactSupport": "WhatsApp Help & Reservation"
+  },
+  "footer": {
+    "tagline": "Your Primary Mobility Partner in Puncak, Bogor, and Surroundings.",
+    "quickLinks": "Quick Links",
+    "contactTitle": "Contact Information",
+    "officeLocation": "Office Location & Map",
+    "openInMaps": "Open in Google Maps",
+    "rights": "All Rights Reserved."
+  }
+}

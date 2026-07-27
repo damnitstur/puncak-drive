@@ -1,0 +1,280 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "cars": "Armada Mobil",
+    "services": "Layanan",
+    "about": "Tentang Kami",
+    "contact": "Hubungi Kami"
+  },
+  "hero": {
+    "badge": "Rental Mobil Resmi Puncak",
+    "tagline": "Berkendara Melampaui Puncak",
+    "rentCar": "SEWA MOBIL",
+    "forLess": "LEBIH HEMAT",
+    "subtext": "Penyewaan mobil terpercaya dengan pengemudi berpengalaman & pengalaman pemesanan tanpa hambatan.",
+    "filterLocation": "Lokasi Penjemputan",
+    "selectLocation": "Pilih Lokasi",
+    "typeLocationPlaceholder": "Ketik lokasi tujuan...",
+    "filterDate": "Tanggal Penjemputan",
+    "selectDate": "Pilih Tanggal",
+    "filterModel": "Model Mobil",
+    "searchBtn": "Cari Mobil",
+    "popularLocations": "Lokasi Populer"
+  },
+  "catalog": {
+    "title": "Katalog Armada Mobil",
+    "subtitle": "Pilihan mobil bersih, terawat, dan siap digunakan untuk perjalanan Anda.",
+    "allModels": "Semua Model",
+    "allTransmissions": "Semua Transmisi",
+    "manual": "Manual",
+    "automatic": "Otomatis",
+    "available": "Tersedia Hari Ini",
+    "booked": "Tersewa (Booked)",
+    "ratePerDay": "Tarif / Hari",
+    "detailBtn": "Detail",
+    "bookBtn": "Pesan",
+    "seats": "Kursi",
+    "noCars": "Tidak ada armada yang sesuai filter",
+    "resetFilter": "Reset Filter",
+    "pickupLocPlaceholder": "Ketik lokasi (misal: Puncak, Bandung...)",
+    "showing": "Menampilkan",
+    "fleetSelection": "armada pilihan",
+    "popularFilter": "Filter: Terpopuler",
+    "popularBtn": "Terpopuler (Popular)"
+  },
+  "detail": {
+    "back": "Kembali ke Katalog Armada",
+    "noticeTitle": "Layanan Khusus Sewa Mobil + Driver (Tanpa Lepas Kunci)",
+    "noticeDesc": "Seluruh armada Puncak Drive disewakan Wajib Termasuk Driver Professional. Kami tidak melayani sewa lepas kunci demi kenyamanan dan keselamatan perjalanan Anda di rute Puncak & sekitarnya.",
+    "driverIncluded": "+ Driver Included",
+    "rateTitle": "Tarif / 12 - 24 Jam",
+    "categoryTitle": "Kategori Armada",
+    "description": "Kendaraan dalam kondisi prima, selalu dibersihkan dan disemprot disinfektan sebelum pengantaran. Didampingi driver lokal ramah yang menguasai rute jalan alternatif Puncak.",
+    "specTitle": "Spesifikasi Kendaraan",
+    "driverService": "Layanan Driver",
+    "driverIncludedVal": "Termasuk Driver",
+    "capacity": "Kapasitas Kursi",
+    "passengers": "Penumpang",
+    "transmission": "Tipe Transmisi",
+    "hygiene": "Kondisi Kebersihan",
+    "hygieneVal": "100% Bersih & Harum",
+    "inclusionsTitle": "Rincian Fasilitas Paket Sewa",
+    "includedHeading": "Termasuk Dalam Harga:",
+    "incCar": "Unit Mobil Siap Pakai",
+    "incDriver": "Jasa Driver Professional",
+    "incAc": "Kenyamanan AC Double Blower",
+    "excludedHeading": "Tidak Termasuk:",
+    "excFuel": "BBM (Bahan Bakar Minyak)",
+    "excToll": "Tol & Parkir Wisata",
+    "excMeal": "Makan Driver",
+    "advantagesTitle": "Keunggulan Layanan Puncak Drive:",
+    "adv1": "Driver sopan, berpengalaman, jujur, dan tepat waktu.",
+    "adv2": "Bisa bantu rekomendasi vila, kuliner, dan tempat wisata populer di Puncak.",
+    "adv3": "Perjalanan lebih santai tanpa perlu lelah menyetir di kemacetan Puncak.",
+    "proceedBtn": "Lanjut ke Formulir Reservasi",
+    "noPrepayment": "Tanpa pembayaran di muka. Reservasi akan dikonfirmasi langsung via WhatsApp."
+  },
+  "booking": {
+    "back": "Kembali ke Detail Armada",
+    "badge": "Formulir Pemesanan Resmi",
+    "title": "Reservasi Sewa Mobil",
+    "subtitle": "Lengkapi rincian tanggal dan lokasi penjemputan untuk mengonfirmasi pesanan Anda via WhatsApp.",
+    "carDetails": "Rincian Armada & Total Harga",
+    "carCleanDesc": "Unit terawat, bersih, dan siap digunakan untuk perjalanan Anda.",
+    "seats": "Kursi",
+    "capacity": "Kapasitas",
+    "transmission": "Transmisi",
+    "dailyRate": "Harga Sewa / Hari",
+    "duration": "Durasi Sewa",
+    "days": "Hari",
+    "total": "Total Pembayaran",
+    "trust1": "Tanpa Biaya Tersembunyi & Garansi Kendaraan Bersih",
+    "trust2": "Layanan Customer Support 24/7 Siap Membantu",
+    "formTitle": "Informasi Pemesan & Penjemputan",
+    "formSubtitle": "Isi data di bawah ini untuk konfirmasi ketersediaan armada.",
+    "fullName": "Nama Lengkap Pemesan",
+    "fullNamePlaceholder": "Masukkan nama lengkap Anda",
+    "email": "Alamat Email Pemesan",
+    "emailPlaceholder": "Masukkan alamat email Anda (contoh: nama@email.com)",
+    "pickupDate": "Tanggal Penjemputan",
+    "pickupLocation": "Lokasi Penjemputan (Opsional)",
+    "locationPlaceholder": "Ketik lokasi (misal: Stasiun Bogor, Hotel Puncak...)",
+    "detectGps": "Deteksi Lokasi GPS Saya",
+    "locatingGps": "Mencari GPS...",
+    "nominatimTitle": "Hasil Pencarian Peta",
+    "googleMapsTitle": "Buka di Google Maps",
+    "notes": "Catatan / Permintaan Khusus",
+    "notesPlaceholder": "Masukkan catatan seperti jam penjemputan, permintaan driver, dll.",
+    "submitBtn": "Konfirmasi & Pesan via WhatsApp"
+  },
+  "services": {
+    "badge": "Layanan Unggulan",
+    "title": "Temukan Transportasi Pilihanmu",
+    "subtitle": "Puncak Drive menyediakan berbagai pilihan layanan transportasi fleksibel dan berkualitas.",
+    "daily": "Rental Mobil Harian",
+    "dailyDesc": "Layanan sewa harian fleksibel untuk kebutuhan liburan singkat atau kunjungan keluarga.",
+    "weekly": "Rental Mobil Mingguan",
+    "weeklyDesc": "Pilihan sewa mingguan lebih hemat untuk perjalanan dinas luar kota atau liburan panjang.",
+    "monthly": "Rental Mobil Bulanan",
+    "monthlyDesc": "Solusi sewa jangka panjang bagi perusahaan, operasional kantor, atau proyek bisnis.",
+    "driver": "Sewa Mobil dengan Driver",
+    "driverDesc": "Pengemudi berpengalaman, ramah, dan menguasai rute jalan untuk perjalanan tanpa lelah.",
+    "airport": "Antar Jemput Bandara",
+    "airportDesc": "Layanan penjemputan dan pengantaran tepat waktu ke Bandara Soekarno-Hatta / Halim.",
+    "tour": "Perjalanan Wisata",
+    "tourDesc": "Paket tour dan perjalanan wisata ke destinasi populer di Puncak, Bogor, dan sekitarnya.",
+    "business": "Perjalanan Bisnis",
+    "businessDesc": "Layanan armada kelas premium untuk kebutuhan operasional bisnis dan kunjungan dinas.",
+    "charter": "Carter Kendaraan",
+    "charterDesc": "Layanan carter khusus rombongan, keluarga besar, atau acara pernikahan & event.",
+    "commitmentBadge": "Komitmen Layanan Puncak Drive",
+    "commitmentHeadline": "Perjalanan Aman, Nyaman, dan Terpercaya di Setiap Kilometer",
+    "commitmentSubtext": "Kami mengutamakan keselamatan dan kepuasan Anda melalui armada berkualitas tinggi yang selalu dirawat berkala dan didampingi pengemudi profesional.",
+    "trust3": "Driver Berpengalaman & Ramah",
+    "trust4": "Armada Bersih & Kondisi Prima",
+    "contactSupport": "Hubungi Customer Support"
+  },
+  "about": {
+    "badge": "Profil Perusahaan Resmi",
+    "title": "Tentang Puncak Drive",
+    "subtitle": "Mitra transportasi rental mobil terpercaya di kawasan Puncak, Bogor, dan sekitarnya dengan standar pelayanan prima.",
+    "address": "Jl. Raya Puncak Gadog, Megamendung, Bogor, Jawa Barat.",
+    "motto": "Drive Beyond the Peak.",
+    "subMotto": "Lebih dari sekadar perjalanan, kami mengantarkan Anda menuju pengalaman terbaik.",
+    "storyBadge": "Sejarah & Profil Perusahaan",
+    "storyTitle": "Mitra Mobilitas Utama Anda di Puncak & Bogor",
+    "storyText": "Puncak Drive adalah perusahaan yang bergerak di bidang penyewaan kendaraan (car rental) yang berkomitmen menghadirkan layanan transportasi yang aman, nyaman, dan terpercaya. Kami memahami bahwa setiap perjalanan memiliki tujuan yang penting, sehingga kami menyediakan armada berkualitas dengan pelayanan profesional untuk memenuhi kebutuhan individu, keluarga, wisatawan, hingga perusahaan.\n\nDengan mengutamakan kepuasan pelanggan, Puncak Drive terus berkembang menjadi mitra mobilitas yang dapat diandalkan melalui pelayanan yang cepat, transparan, dan berorientasi pada kenyamanan.",
+    "visionBadge": "Visi Perusahaan",
+    "visionText": "Menjadi perusahaan rental kendaraan terpercaya yang memberikan pengalaman berkendara terbaik melalui pelayanan profesional, armada berkualitas, dan inovasi layanan.",
+    "missionBadge": "Misi Perusahaan",
+    "missionList": [
+      "Memberikan pelayanan yang cepat, ramah, dan profesional.",
+      "Menyediakan armada yang bersih, aman, dan selalu dalam kondisi prima.",
+      "Membangun hubungan jangka panjang berdasarkan kepercayaan pelanggan.",
+      "Menghadirkan solusi transportasi yang fleksibel dan sesuai kebutuhan.",
+      "Terus berinovasi mengikuti perkembangan teknologi di industri transportasi."
+    ],
+    "targetTitle": "Target Pelanggan Utama Kami",
+    "targetCustomers": [
+      "Individu",
+      "Keluarga",
+      "Wisatawan",
+      "Perusahaan",
+      "Instansi Pemerintah",
+      "Event Organizer",
+      "Travel Partner"
+    ],
+    "whyTitle": "Mengapa Memilih Puncak Drive?",
+    "whyList": [
+      {
+        "title": "Armada Berkualitas",
+        "description": "Seluruh kendaraan dirawat secara berkala untuk memastikan keamanan dan kenyamanan."
+      },
+      {
+        "title": "Harga Transparan",
+        "description": "Tidak ada biaya tersembunyi dengan harga yang kompetitif."
+      },
+      {
+        "title": "Pelayanan Profesional",
+        "description": "Tim kami siap membantu kebutuhan pelanggan dengan respon yang cepat."
+      },
+      {
+        "title": "Fleksibel",
+        "description": "Pilihan sewa harian, mingguan, hingga bulanan sesuai kebutuhan."
+      },
+      {
+        "title": "Tepat Waktu",
+        "description": "Kami menjunjung tinggi ketepatan waktu dalam setiap layanan."
+      },
+      {
+        "title": "Customer Support",
+        "description": "Siap membantu pelanggan selama proses pemesanan hingga perjalanan selesai."
+      }
+    ],
+    "valuesBadge": "Core Values",
+    "valuesTitle": "Nilai Utama Perusahaan",
+    "valuesList": [
+      {
+        "name": "Trust",
+        "description": "Membangun kepercayaan melalui pelayanan yang jujur dan profesional."
+      },
+      {
+        "name": "Safety",
+        "description": "Keselamatan pelanggan adalah prioritas utama."
+      },
+      {
+        "name": "Quality",
+        "description": "Menghadirkan kualitas terbaik pada armada maupun pelayanan."
+      },
+      {
+        "name": "Commitment",
+        "description": "Berkomitmen memberikan pengalaman perjalanan yang memuaskan."
+      }
+    ],
+    "contactBadge": "Hubungi & Kunjungi Kami",
+    "contactTitle": "Lokasi Kantor & Layanan Pelanggan",
+    "contactArea": "Jabodetabek & Puncak"
+  },
+  "terms": {
+    "badge": "Puncak Drive Official Terms",
+    "title": "Syarat & Ketentuan (Terms & Conditions)",
+    "updated": "Terakhir diperbarui: 27 Juli 2026 — Dokumen resmi operasional layanan rental kendaraan Puncak Drive.",
+    "sec1Title": "1. Ketentuan Pengemudi (Driver Professional Only)",
+    "sec1Text": "Seluruh armada kendaraan Puncak Drive yang beroperasi di kawasan Puncak, Bogor, Cianjur, dan sekitarnya wajib didampingi oleh Pengemudi (Driver) profesional resmi dari Puncak Drive. Kebijakan ini diterapkan guna menjamin keamanan, keselamatan, serta kenyamanan medan perjalanan pegunungan yang curam dan rawan kemacetan. Layanan sewa lepas kunci secara terbatas hanya berlaku untuk mitra korporat yang telah melalui verifikasi legalitas perusahaan secara menyeluruh.",
+    "sec2Title": "2. Persyaratan Dokumen & Identitas",
+    "sec2Text": "Penyewa wajib melampirkan salinan identitas resmi yang masih berlaku (E-KTP untuk WNI / Paspor & KITAS untuk WNA) serta memberikan informasi alamat penjemputan dan nomor kontak WhatsApp darurat yang dapat dihubungi.",
+    "sec3Title": "3. Tata Cara Pemesanan & Pembayaran",
+    "sec3Text": "Reservasi dianggap sah setelah penyewa menerima konfirmasi resmi dari Admin WhatsApp Puncak Drive. Pembayaran dapat dilakukan melalui transfer bank resmi atau tunai sesuai dengan invoice resmi yang diterbitkan.",
+    "sec4Title": "4. Kebijakan Pembatalan & Perubahan Jadwal",
+    "sec4Text": "Pembatalan yang dilakukan selambat-lambatnya 24 jam sebelum waktu penjemputan (H-1) tidak dikenakan denda. Pembatalan mendadak pada hari H dapat dikenakan biaya administrasi operasional sebesar 50% dari total nilai sewa.",
+    "sec5Title": "5. Tanggung Jawab & Asuransi",
+    "sec5Text": "Seluruh kendaraan kami dilindungi oleh asuransi dan secara rutin menjalani inspeksi kelayakan jalan berkala. Puncak Drive bertanggung jawab atas pemeliharaan armada dan performa pengemudi selama masa sewa berlangsung."
+  },
+  "privacy": {
+    "badge": "Puncak Drive Privacy Policy",
+    "title": "Kebijakan Privasi (Privacy Policy)",
+    "updated": "Terakhir diperbarui: 27 Juli 2026 — Dokumen jaminan kerahasiaan & perlindungan data pelanggan Puncak Drive.",
+    "sec1Title": "1. Pengumpulan Informasi Pribadi",
+    "sec1Text": "Puncak Drive mengumpulkan data pribadi berupa Nama Lengkap, Nomor Kontak WhatsApp, Alamat Email, Tanggal Reservasi, serta Lokasi Penjemputan semata-mata untuk keperluan pemrosesan layanan rental kendaraan, koordinasi driver, serta penerbitan invoice resmi.",
+    "sec2Title": "2. Perlindungan & Keamanan Data",
+    "sec2Text": "Kami menerapkan standar keamanan enkripsi digital mutakhir untuk melindungi data Anda dari akses yang tidak sah, pengungkapan, atau penyalahgunaan. Informasi Anda disimpan pada server tertutup yang aman dan hanya dapat diakses oleh personel operasional berwenang.",
+    "sec3Title": "3. Kerahasiaan Pihak Ketiga",
+    "sec3Text": "Puncak Drive menjamin tidak akan pernah menjual, menyewakan, membagikan, atau memperdagangkan data pribadi pelanggan kepada pihak ketiga mana pun untuk keperluan pemasaran atau iklan komersial. Data hanya dibagikan secara terbatas kepada Driver bertugas semata-mata untuk keperluan koordinasi penjemputan.",
+    "sec4Title": "4. Hak Pelanggan Atas Data",
+    "sec4Text": "Pelanggan berhak mengajukan pembaruan, perbaikan, atau penghapusan seluruh data pribadi dari sistem kami setelah masa sewa kendaraan selesai dengan menghubungi Customer Support Puncak Drive."
+  },
+  "cookies": {
+    "badge": "Puncak Drive Cookie Policy",
+    "title": "Kebijakan Cookie (Cookie Policy)",
+    "updated": "Terakhir diperbarui: 27 Juli 2026 — Informasi penggunaan cookie dan penyimpanan lokal pada website Puncak Drive.",
+    "sec1Title": "1. Pengertian Cookie",
+    "sec1Text": "Cookie adalah berkas teks berukuran kecil yang disimpan pada browser perangkat Anda saat mengunjungi website Puncak Drive. Cookie membantu situs mengingat pengaturan dan aktivitas preferensi Anda agar kunjungan berikutnya menjadi lebih cepat dan efisien.",
+    "sec2Title": "2. Penggunaan Cookie di Website Kami",
+    "sec2Text": "Puncak Drive hanya memanfaatkan cookie fungsional esensial untuk menyimpan preferensi pilihan bahasa pengguna (i18n: Indonesia, English, Arabic) serta mempertahankan pilihan filter pencarian armada saat berpindah halaman.",
+    "sec3Title": "3. Penonaktifan & Pengelolaan Cookie",
+    "sec3Text": "Anda berhak menolak atau menghapus cookie browser kapan saja melalui menu pengaturan (Settings / Privacy) pada browser Anda. Harap diperhatikan bahwa mematikan cookie esensial dapat mempengaruhi fitur pengingat bahasa otomatis pada situs web."
+  },
+  "sitemap": {
+    "badge": "Puncak Drive Navigation Index",
+    "title": "Peta Situs (Sitemap)",
+    "sub": "Struktur navigasi lengkap seluruh halaman dan seksi resmi Puncak Drive Car Rental.",
+    "mainTitle": "Halaman Utama & Layanan",
+    "legalTitle": "Dokumen Legalitas & Verifikasi Resmi",
+    "home": "Beranda (Home Page)",
+    "catalog": "Katalog Armada (Car Catalog)",
+    "services": "Layanan Rental (Our Services)",
+    "about": "Tentang Kami (Company Profile)",
+    "terms": "Syarat & Ketentuan",
+    "privacy": "Kebijakan Privasi",
+    "cookies": "Kebijakan Cookie",
+    "contactSupport": "Bantuan & Reservasi WhatsApp"
+  },
+  "footer": {
+    "tagline": "Mitra Mobilitas Utama Anda di Puncak, Bogor, dan sekitarnya.",
+    "quickLinks": "Tautan Cepat",
+    "contactTitle": "Informasi Kontak",
+    "officeLocation": "Lokasi Kantor & Peta",
+    "openInMaps": "Buka di Google Maps",
+    "rights": "Hak Cipta Dilindungi Undang-Undang."
+  }
+}
