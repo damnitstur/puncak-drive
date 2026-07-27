@@ -94,13 +94,6 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
     onSearch({ location, date: formattedDate, carModel: activeCarFilter, pickupLocation: location })
   }
 
-  // Open Google Maps view for selected location
-  const handleOpenGoogleMaps = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`
-    window.open(mapsUrl, "_blank")
-  }
-
   return (
     <section
       className="dark relative w-full overflow-hidden flex flex-col min-h-svh lg:h-svh bg-background bg-gradient-to-r from-25% via-50% to-75% from-background via-muted to-background"
