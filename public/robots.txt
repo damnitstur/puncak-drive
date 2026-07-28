@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://www.puncakdrive.com/sitemap.xml
 Sitemap: https://puncakdrive.com/sitemap.xml
