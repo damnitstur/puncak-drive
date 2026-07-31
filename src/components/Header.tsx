@@ -17,6 +17,22 @@ interface HeaderProps {
 function Header({ brandName, activePage = "home", onNavigateAbout, onNavigateHome }: HeaderProps) {
   const { t } = useTranslation()
   const [isOpen, setIsOpen] = React.useState(false)
+  const [scrolled, setScrolled] = React.useState(false)
+
+  React.useEffect(() => {
+    let ticking = false
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   const getLinkClass = (pageName: string) => {
     const isActive = activePage === pageName
@@ -39,7 +55,13 @@ function Header({ brandName, activePage = "home", onNavigateAbout, onNavigateHom
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+        scrolled
+          ? "dark bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg"
+          : "dark bg-background/40 backdrop-blur-md border-b border-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
 
