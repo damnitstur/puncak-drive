@@ -63,7 +63,7 @@
     "serviceArea": "Wilayah Jabodatebek",
     "includedHeading": "Termasuk Dalam Harga:",
     "incCar": "Unit Mobil Siap Pakai",
-    "incDriver": "Jasa Driver 2 Jam",
+    "incDriver": "Jasa Driver",
     "excludedHeading": "Tidak Termasuk:",
     "excFuel": "BBM (Bahan Bakar Minyak)",
     "excToll": "Parkir & Tol",
@@ -76,7 +76,7 @@
     "adv2": "Bisa bantu rekomendasi vila, kuliner, dan tempat wisata populer di Puncak.",
     "adv3": "Perjalanan lebih santai tanpa perlu lelah menyetir di kemacetan Puncak.",
     "proceedBtn": "Lanjut ke Formulir Reservasi",
-    "noPrepayment": "Tanpa pembayaran di muka. Reservasi akan dikonfirmasi langsung via WhatsApp."
+    "noPrepayment": "Tanpa pembayaran di muka."
   },
   "booking": {
     "back": "Kembali ke Detail Armada",

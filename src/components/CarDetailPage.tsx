@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Calendar } from "@/components/ui/calendar"
 import { Separator } from "@/components/ui/separator"
 import { HugeiconsIcon } from "@/components/ui/icon"
@@ -57,45 +57,51 @@ export default function CarDetailPage({
   const bookedDates = getBookedDates(car.id)
 
   return (
-    <div className="min-h-screen bg-background text-foreground py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-8">
-
-        {/* Back Button */}
         <div>
           <Button
             variant="ghost"
             onClick={onBack}
-            className="group gap-2 text-muted-foreground hover:text-foreground pl-0 text-xs font-semibold"
           >
             <HugeiconsIcon
               icon={ArrowLeft01Icon}
-              className="w-4 h-4 group-hover:-translate-x-1 transition-transform"
             />
             {t("detail.back")}
           </Button>
         </div>
-
-        {/* CRITICAL ANNOUNCEMENT BANNER: Strictly With Driver (No Lepas Kunci) */}
-        <div className="p-4 sm:p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-amber-500">
-          <div className="p-2.5 bg-amber-500/20 rounded-xl shrink-0">
-            <HugeiconsIcon icon={InformationCircleIcon} className="w-6 h-6 text-amber-500" />
+        <div className="grid grid-cols-1 lg:grid-cols-[0.5fr_1fr_0.5fr] h-full relative mx-auto gap-8 items-start">
+          <div className="hidden lg:block h-full relative">
+            <div className="sticky top-4 grid gap-4">
+              <div className="flex rounded-xl aspect-square bg-muted w-full border justify-center items-center">
+                <p>
+                  banner space
+                </p>
+              </div>
+              <div className="flex rounded-xl aspect-square bg-muted w-full border justify-center items-center">
+                <p>
+                  space ads is Available
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="space-y-0.5">
-            <h4 className="text-sm font-extrabold uppercase tracking-wider">
-              {t("detail.noticeTitle")}
-            </h4>
-            <p className="text-xs text-amber-500/90 leading-relaxed">
-              {t("detail.noticeDesc")}
-            </p>
-          </div>
-        </div>
-
-        {/* 2-Column Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
           {/* LEFT COLUMN: Car Image Showcase (6 Cols) */}
-          <div className="lg:col-span-6 space-y-4">
-            <Card className="bg-card border-border rounded-2xl overflow-hidden shadow-xl">
+          <div className="lg:col-2/2 space-y-4 grid gap-4 relative h-full">
+            <div className="sticky top-0 p-4 sm:p-5 rounded bg-red-50 z-50 border border-destructive/30 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-destructive">
+              <div className="p-2.5 bg-destructive/20 rounded-xl shrink-0">
+                <HugeiconsIcon icon={InformationCircleIcon} className="w-6 h-6 text-destructive" />
+              </div>
+              <div className="space-y-0.5">
+                <h4 className="text-xs font-bold uppercase tracking-wider">
+                  {t("detail.noticeTitle")}
+                </h4>
+                <p className="text-xs text-destructive leading-relaxed">
+                  {t("detail.noticeDesc")}
+                </p>
+              </div>
+            </div>
+
+            <Card className="overflow-hidden">
               <div className="relative aspect-[16/10] bg-muted/60 flex items-center justify-center p-8 border-b border-border">
                 <img
                   src={getCarImage(car.name, car.id)}
@@ -107,8 +113,8 @@ export default function CarDetailPage({
                 <Badge
                   variant="outline"
                   className={`absolute top-4 left-4 text-[10px] font-bold ${availStatus.isAvailable
-                      ? "bg-emerald-500/10 text-emerald-500 border-emerald-500/30"
-                      : "bg-amber-500/10 text-amber-500 border-amber-500/30"
+                    ? "bg-emerald-500/10 text-emerald-500 border-emerald-500/30"
+                    : "bg-destructive/10 text-destructive border-destructive/30"
                     }`}
                 >
                   {availStatus.isAvailable ? t("catalog.available") : t("catalog.booked")}
@@ -124,13 +130,13 @@ export default function CarDetailPage({
                 </Badge>
               </div>
 
-              <CardContent className="p-6 space-y-4">
+              <CardContent className="pt-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
+                    <span className="text-xs text-muted-foreground">
                       {t("detail.categoryTitle")}
                     </span>
-                    <h2 className="text-2xl sm:text-3xl font-black text-foreground capitalize">
+                    <h2 className="text-xl font-bold text-foreground capitalize">
                       {car.name}
                     </h2>
                   </div>
@@ -151,21 +157,22 @@ export default function CarDetailPage({
             </Card>
 
             {/* Inclusions & Exclusions Card */}
-            <Card className="bg-card border-border rounded-2xl p-5 space-y-4 shadow-md">
-              <div className="flex items-start justify-between gap-3">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-foreground flex items-center gap-2">
-                  <HugeiconsIcon icon={Tick01Icon} className="w-4 h-4 text-primary" />
+            <div className="space-y-4">
+              <div className="flex gap-3 justify-between">
+                <h3 className="text-xl font-bold text-foreground">
                   {t("detail.inclusionsTitle")}
-                </h4>
-                <span className="shrink-0 text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                </h3>
+                <Badge
+                  variant="outline"
+                >
                   {t("detail.serviceArea")}
-                </span>
+                </Badge>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                 {/* Included */}
-                <div className="space-y-2">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-500">
+                <div className="space-y-2.5 flex flex-col">
+                  <span className="text-xs font-bold uppercase tracking-widest text-emerald-500">
                     {t("detail.includedHeading")}
                   </span>
                   <ul className="space-y-1.5 text-muted-foreground">
@@ -181,73 +188,71 @@ export default function CarDetailPage({
                 </div>
 
                 {/* Excluded */}
-                <div className="space-y-2">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-amber-500">
+                <div className="space-y-2.5 flex flex-col">
+                  <span className="text-xs font-bold uppercase tracking-widest text-destructive">
                     {t("detail.excludedHeading")}
                   </span>
                   <ul className="space-y-1.5 text-muted-foreground">
                     <li className="flex items-center gap-2">
-                      <HugeiconsIcon icon={CancelCircleIcon} className="w-4 h-4 text-amber-500 shrink-0" />
+                      <HugeiconsIcon icon={CancelCircleIcon} className="w-4 h-4 text-destructive shrink-0" />
                       <span>{t("detail.excFuel")}</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <HugeiconsIcon icon={CancelCircleIcon} className="w-4 h-4 text-amber-500 shrink-0" />
+                      <HugeiconsIcon icon={CancelCircleIcon} className="w-4 h-4 text-destructive shrink-0" />
                       <span>{t("detail.excToll")}</span>
                     </li>
                   </ul>
                 </div>
               </div>
-            </Card>
-          </div>
-
-          {/* RIGHT COLUMN: Technical Specs & Action (6 Cols) */}
-          <div className="lg:col-span-6 space-y-6">
-            <Card className="bg-card border-border rounded-2xl p-6 space-y-6 shadow-xl">
-              <div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex gap-3 justify-between">
+                <h3 className="text-xl font-bold text-foreground">
+                  {t("detail.featuresTitle", { name: car.name })}
+                </h3>
                 <Badge
                   variant="outline"
-                  className="border-primary/30 text-primary text-[10px] tracking-widest uppercase font-bold mb-2"
                 >
                   {t("detail.specTitle")}
                 </Badge>
-                <h3 className="text-xl font-extrabold text-foreground">
-                  {t("detail.featuresTitle", { name: car.name })}
-                </h3>
               </div>
 
               {/* Key Specs Grid */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 bg-muted/60 rounded-xl border border-border space-y-1">
+                <div className='p-4 space-y-1 border rounded-xl'>
                   <HugeiconsIcon icon={UserCheck01Icon} className="w-5 h-5 text-primary" />
                   <p className="text-[10px] font-bold text-muted-foreground uppercase">{t("detail.driverService")}</p>
                   <p className="text-xs font-bold text-foreground">{t("detail.driverIncludedVal")}</p>
                 </div>
 
-                <div className="p-4 bg-muted/60 rounded-xl border border-border space-y-1">
+                <div className='p-4 space-y-1 border rounded-xl'>
                   <HugeiconsIcon icon={UserGroupIcon} className="w-5 h-5 text-primary" />
                   <p className="text-[10px] font-bold text-muted-foreground uppercase">{t("detail.capacity")}</p>
                   <p className="text-xs font-bold text-foreground">{car.capacity} {t("detail.passengers")}</p>
                 </div>
 
-                <div className="p-4 bg-muted/60 rounded-xl border border-border space-y-1">
+                <div className='p-4 space-y-1 border rounded-xl'>
                   <HugeiconsIcon icon={Clock01Icon} className="w-5 h-5 text-primary" />
                   <p className="text-[10px] font-bold text-muted-foreground uppercase">{t("detail.transmission")}</p>
                   <p className="text-xs font-bold text-foreground capitalize">{car.transmission}</p>
                 </div>
 
-                <div className="p-4 bg-muted/60 rounded-xl border border-border space-y-1">
+                <div className='p-4 space-y-1 border rounded-xl'>
                   <HugeiconsIcon icon={Fuel01Icon} className="w-5 h-5 text-primary" />
                   <p className="text-[10px] font-bold text-muted-foreground uppercase">{t("detail.hygiene")}</p>
                   <p className="text-xs font-bold text-foreground">{t("detail.hygieneVal")}</p>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <Separator />
-
+          {/* RIGHT COLUMN: Technical Specs & Action (6 Cols) */}
+          <div className="lg:col-3/3 space-y-6 lg:sticky top-0">
+            <div className="py-4 space-y-6">
               {/* Availability Calendar */}
               <div className="space-y-3">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
-                  <HugeiconsIcon icon={Calendar02Icon} className="w-4 h-4 text-primary" />
+                <h4 className="text-xl font-bold tracking-wider text-foreground flex items-center gap-2">
+                  <HugeiconsIcon icon={Calendar02Icon} className="w-6 h-6 text-primary" />
                   {t("detail.availabilityTitle")}
                 </h4>
 
@@ -290,17 +295,13 @@ export default function CarDetailPage({
               <div className="space-y-3 pt-2">
                 <Button
                   onClick={() => onProceedToBooking(car)}
-                  className="w-full h-12 uppercase tracking-widest text-xs font-black shadow-lg shadow-primary/25 gap-2"
+                  className="w-full"
                 >
                   <HugeiconsIcon icon={SentIcon} className="w-4 h-4" />
                   {t("detail.proceedBtn")}
                 </Button>
-
-                <p className="text-[10px] text-center text-muted-foreground">
-                  🔒 {t("detail.noPrepayment")}
-                </p>
               </div>
-            </Card>
+            </div>
           </div>
 
         </div>

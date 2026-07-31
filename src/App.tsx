@@ -268,7 +268,7 @@ function MainApp() {
 
   if (routeState.page === "detail" && activeCar) {
     return (
-      <div className="dark min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-background text-foreground">
         <CarDetailPage
           car={activeCar}
           onBack={handleNavigateHome}

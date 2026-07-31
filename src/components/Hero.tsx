@@ -10,7 +10,9 @@ import {
   WhatsappIcon,
   Loading02Icon,
   Mouse01Icon,
-  ArrowDownDoubleIcon
+  ArrowDownDoubleIcon,
+  ArrowLeft01Icon,
+  ArrowRight01Icon,
 } from "@hugeicons/core-free-icons"
 import { isDateBooked } from "@/lib/availability"
 
@@ -94,6 +96,48 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
     onSearch({ location, date: formattedDate, carModel: activeCarFilter, pickupLocation: location })
   }
 
+  // Carousel slide navigation logic
+  const activeIndex = React.useMemo(() => {
+    const idx = sidebarCars.findIndex(
+      (car) => car.id.toLowerCase() === activeCarFilter.toLowerCase()
+    )
+    return idx >= 0 ? idx : 0
+  }, [sidebarCars, activeCarFilter])
+
+  const handlePrevSlide = React.useCallback(() => {
+    const newIdx = (activeIndex - 1 + sidebarCars.length) % sidebarCars.length
+    setActiveCarFilter(sidebarCars[newIdx].id)
+  }, [activeIndex, sidebarCars, setActiveCarFilter])
+
+  const handleNextSlide = React.useCallback(() => {
+    const newIdx = (activeIndex + 1) % sidebarCars.length
+    setActiveCarFilter(sidebarCars[newIdx].id)
+  }, [activeIndex, sidebarCars, setActiveCarFilter])
+
+  // Touch Swipe Handlers for mobile car image slider
+  const touchStartX = React.useRef<number | null>(null)
+  const touchEndX = React.useRef<number | null>(null)
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchEndX.current = null
+    touchStartX.current = e.targetTouches[0].clientX
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return
+    const distance = touchStartX.current - touchEndX.current
+    const minSwipeDistance = 40
+    if (distance > minSwipeDistance) {
+      handleNextSlide()
+    } else if (distance < -minSwipeDistance) {
+      handlePrevSlide()
+    }
+  }
+
   return (
     <section
       className="dark relative w-full overflow-hidden flex flex-col min-h-svh lg:h-svh bg-background bg-gradient-to-r from-25% via-50% to-75% from-background via-muted to-background"
@@ -113,20 +157,19 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
           {/* Responsive Layout: Mobile Stack -> Desktop 3-Column Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr_260px] flex-1 h-full min-h-0 gap-6 lg:gap-0">
 
-            {/* COL 1 — Car list filter (Mobile: horizontal scrollable pills | Desktop: vertical list) */}
-            <div className="flex flex-col justify-between py-2 lg:py-4 lg:pr-4 order-2 lg:order-1">
+            {/* COL 1 — Car list filter (Desktop vertical list only; mobile uses image swipe slider) */}
+            <div className="hidden lg:flex flex-col justify-between py-4 pr-4 order-1">
               <div className="flex-1 flex flex-col justify-center">
-                {/* Mobile Horizontal Pill Bar / Desktop Vertical List */}
-                <ul className="flex lg:flex-col overflow-x-auto gap-2 lg:gap-3 py-1 scrollbar-none items-center lg:items-start">
+                <ul className="flex flex-col gap-3 py-1 items-start">
                   {sidebarCars.map((car) => {
                     const isActive = activeCarFilter.toLowerCase() === car.id.toLowerCase()
                     return (
-                      <li key={car.id} className="flex-shrink-0">
+                      <li key={car.id} className="w-full">
                         <button
                           onClick={() => setActiveCarFilter(car.id)}
                           className={`transition-all duration-200 tracking-widest uppercase font-bold text-xs ${isActive
-                            ? "bg-primary text-primary-foreground px-4 py-2 rounded-full lg:bg-transparent lg:text-foreground lg:p-0 lg:text-sm lg:rounded-none"
-                            : "bg-card/60 text-muted-foreground hover:text-foreground px-4 py-2 rounded-full border border-border/50 lg:border-none lg:bg-transparent lg:p-0 lg:text-xs"
+                            ? "text-primary text-sm font-black"
+                            : "text-muted-foreground hover:text-foreground text-xs"
                             }`}
                         >
                           {car.name}
@@ -137,8 +180,8 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
                 </ul>
               </div>
 
-              {/* Landscape logo (Hidden on small mobile, visible on tablet & desktop) */}
-              <div className="hidden lg:block flex-shrink-0 text-foreground pt-4">
+              {/* Landscape logo */}
+              <div className="flex-shrink-0 text-foreground pt-4">
                 <LogoLandscape className="w-auto h-7" />
               </div>
             </div>
@@ -154,15 +197,66 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
                 </h1>
               </div>
 
-              {/* Car image — Dynamic based on activeCarFilter */}
-              <div className="flex-1 w-full max-w-3xl flex items-end justify-center min-h-[180px] sm:min-h-[260px] lg:min-h-0 pointer-events-none select-none my-4">
-                <img
-                  key={activeCarFilter}
-                  src={currentCarImage}
-                  alt={activeCarFilter}
-                  className="w-full object-contain transition-all duration-300 animate-in fade-in zoom-in-95 max-h-[220px] sm:max-h-[320px] lg:max-h-full"
-                  style={{ objectPosition: "bottom" }}
-                />
+              {/* Car image showcase — Touch Swipe enabled on mobile, click/list selection on desktop */}
+              <div
+                className="relative flex-1 w-full max-w-3xl flex flex-col items-center justify-end min-h-[220px] sm:min-h-[280px] lg:min-h-0 select-none my-2 group"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
+                {/* Mobile Left & Right Swipe Arrow Buttons */}
+                <button
+                  type="button"
+                  onClick={handlePrevSlide}
+                  aria-label="Previous Car"
+                  className="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-background/60 backdrop-blur-md border border-border text-foreground/80 hover:text-foreground hover:bg-background/90 transition-all shadow-lg active:scale-95"
+                >
+                  <HugeiconsIcon icon={ArrowLeft01Icon} className="w-5 h-5" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleNextSlide}
+                  aria-label="Next Car"
+                  className="lg:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-background/60 backdrop-blur-md border border-border text-foreground/80 hover:text-foreground hover:bg-background/90 transition-all shadow-lg active:scale-95"
+                >
+                  <HugeiconsIcon icon={ArrowRight01Icon} className="w-5 h-5" />
+                </button>
+
+                {/* Car Image with transition */}
+                <div className="w-full flex justify-center items-end flex-1 pointer-events-none">
+                  <img
+                    key={activeCarFilter}
+                    src={currentCarImage}
+                    alt={activeCarFilter}
+                    className="w-full object-contain transition-all duration-300 animate-in fade-in zoom-in-95 max-h-[200px] sm:max-h-[280px] lg:max-h-full"
+                    style={{ objectPosition: "bottom" }}
+                  />
+                </div>
+
+                {/* Mobile Carousel Indicators & Car Name Badge */}
+                <div className="lg:hidden flex flex-col items-center gap-2 mt-2 z-20">
+                  <span className="text-[11px] font-extrabold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 px-3 py-0.5 rounded-full">
+                    {sidebarCars[activeIndex]?.name || activeCarFilter}
+                  </span>
+
+                  {/* Dots indicator */}
+                  <div className="flex items-center gap-1.5">
+                    {sidebarCars.map((car, idx) => (
+                      <button
+                        key={car.id}
+                        type="button"
+                        onClick={() => setActiveCarFilter(car.id)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          idx === activeIndex
+                            ? "w-6 bg-primary"
+                            : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
+                        }`}
+                        aria-label={`Select ${car.name}`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* SEARCH BAR — Mobile-stacked & Desktop horizontal */}
