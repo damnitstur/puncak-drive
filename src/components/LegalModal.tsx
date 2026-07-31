@@ -155,23 +155,33 @@ export default function LegalModal({ type, onClose, onNavigate }: LegalModalProp
                   <span>Beranda (Home Page)</span>
                 </button>
 
-                <a
-                  href="#catalog"
-                  onClick={() => { onNavigate?.("home"); onClose(); }}
+                <button
+                  onClick={() => {
+                    onNavigate?.("home")
+                    onClose()
+                    setTimeout(() => {
+                      document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" })
+                    }, 100)
+                  }}
                   className="p-3 bg-muted/40 hover:bg-accent rounded-xl border border-border text-left transition-colors flex items-center gap-2 font-bold text-xs"
                 >
                   <HugeiconsIcon icon={CheckmarkCircle02Icon} className="w-4 h-4 text-primary shrink-0" />
                   <span>Katalog Armada (Car Catalog)</span>
-                </a>
+                </button>
 
-                <a
-                  href="#services"
-                  onClick={() => { onNavigate?.("home"); onClose(); }}
+                <button
+                  onClick={() => {
+                    onNavigate?.("home")
+                    onClose()
+                    setTimeout(() => {
+                      document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
+                    }, 100)
+                  }}
                   className="p-3 bg-muted/40 hover:bg-accent rounded-xl border border-border text-left transition-colors flex items-center gap-2 font-bold text-xs"
                 >
                   <HugeiconsIcon icon={CheckmarkCircle02Icon} className="w-4 h-4 text-primary shrink-0" />
                   <span>Layanan Rental (Our Services)</span>
-                </a>
+                </button>
 
                 <button
                   onClick={() => { onNavigate?.("about"); onClose(); }}

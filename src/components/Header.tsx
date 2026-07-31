@@ -41,12 +41,22 @@ function Header({ brandName, activePage = "home", onNavigateAbout, onNavigateHom
     }`
   }
 
+  const handleScrollTo = (id: string) => {
+    if (window.location.pathname !== "/") {
+      onNavigateHome?.()
+      setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: "smooth" })
+      }, 100)
+    } else {
+      const el = document.getElementById(id)
+      if (el) el.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${scrolled ? "dark text-muted-foreground bg-background/0 backdrop-blur-md" : "dark text-primary"
-        }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
@@ -63,20 +73,18 @@ function Header({ brandName, activePage = "home", onNavigateAbout, onNavigateHom
             >
               {t("nav.home")}
             </button>
-            <a
-              href="#catalog"
-              onClick={onNavigateHome}
+            <button
+              onClick={() => handleScrollTo("catalog")}
               className={getLinkClass("catalog")}
             >
               {t("nav.cars")}
-            </a>
-            <a
-              href="#services"
-              onClick={onNavigateHome}
+            </button>
+            <button
+              onClick={() => handleScrollTo("services")}
               className={getLinkClass("services")}
             >
               {t("nav.services")}
-            </a>
+            </button>
             <button
               onClick={onNavigateAbout}
               className={getLinkClass("about")}
@@ -112,21 +120,20 @@ function Header({ brandName, activePage = "home", onNavigateAbout, onNavigateHom
           <div className="px-4 pt-3 pb-5 space-y-2">
             {[
               { label: t("nav.home"), action: () => onNavigateHome?.() },
-              { label: t("nav.cars"), href: "#catalog" },
-              { label: t("nav.services"), href: "#services" },
+              { label: t("nav.cars"), action: () => handleScrollTo("catalog") },
+              { label: t("nav.services"), action: () => handleScrollTo("services") },
               { label: t("nav.about"), action: () => onNavigateAbout?.() },
             ].map((item, idx) => (
-              <a
+              <button
                 key={idx}
-                href={item.href || "#"}
                 onClick={() => {
                   setIsOpen(false)
                   if (item.action) item.action()
                 }}
-                className="block px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                className="block w-full text-left px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
               >
                 {item.label}
-              </a>
+              </button>
             ))}
             <div className="pt-2">
               <Button asChild className="w-full rounded-full uppercase tracking-widest text-xs h-11 shadow-lg shadow-primary/20">

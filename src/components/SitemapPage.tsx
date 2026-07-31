@@ -73,7 +73,7 @@ export default function SitemapPage({ onNavigate, onBack }: SitemapPageProps) {
                   <HugeiconsIcon icon={CheckmarkCircle02Icon} className="w-4 h-4 text-primary shrink-0" />
                   <span>{t("sitemap.catalog")}</span>
                 </div>
-                <span className="text-[10px] text-muted-foreground group-hover:text-primary font-mono">#catalog</span>
+                <span className="text-[10px] text-muted-foreground group-hover:text-primary font-mono">/</span>
               </button>
 
               <button
@@ -84,7 +84,7 @@ export default function SitemapPage({ onNavigate, onBack }: SitemapPageProps) {
                   <HugeiconsIcon icon={CheckmarkCircle02Icon} className="w-4 h-4 text-primary shrink-0" />
                   <span>{t("sitemap.services")}</span>
                 </div>
-                <span className="text-[10px] text-muted-foreground group-hover:text-primary font-mono">#services</span>
+                <span className="text-[10px] text-muted-foreground group-hover:text-primary font-mono">/</span>
               </button>
 
               <button

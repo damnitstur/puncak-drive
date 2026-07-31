@@ -18,10 +18,23 @@ function Footer({ brandName, onNavigateAbout, onNavigateHome, onNavigateLegal }:
   const { t } = useTranslation()
   const year = new Date().getFullYear()
 
+  const handleScrollTo = (id: string) => {
+    if (window.location.pathname !== "/") {
+      onNavigateHome?.()
+      setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: "smooth" })
+      }, 100)
+    } else {
+      const el = document.getElementById(id)
+      if (el) el.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   const quickLinks = [
     { label: t("nav.home"), action: () => onNavigateHome?.() },
-    { label: t("nav.cars"), href: "#catalog" },
-    { label: t("nav.services"), href: "#services" },
+    { label: t("nav.cars"), action: () => handleScrollTo("catalog") },
+    { label: t("nav.services"), action: () => handleScrollTo("services") },
     { label: t("nav.about"), action: () => onNavigateAbout?.() },
     { label: t("nav.contact"), href: "https://wa.me/6289611384407" },
   ]
