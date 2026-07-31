@@ -11,8 +11,6 @@ import {
   Loading02Icon,
   Mouse01Icon,
   ArrowDownDoubleIcon,
-  ArrowLeft01Icon,
-  ArrowRight01Icon,
 } from "@hugeicons/core-free-icons"
 import { isDateBooked } from "@/lib/availability"
 
