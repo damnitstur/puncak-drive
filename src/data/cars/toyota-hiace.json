@@ -1,0 +1,50 @@
+{
+  "slug": "toyota-hiace",
+  "id": "hiace",
+  "name": "Toyota HiAce",
+  "transmission": "Manual",
+  "capacity": "14-15",
+  "pricePerDay": 800,
+  "image": "/hiace.webp",
+  "gallery": ["/hiace.webp"],
+  "tag": "Paling Laris Rombongan",
+  "isPopular": true,
+  "rating": 4.9,
+  "totalRentals": 125,
+  "shortDesc": "Armada terbaik untuk rombongan besar, grup wisata, dan acara keluarga.",
+  "longDesc": "Toyota HiAce adalah solusi transportasi rombongan terbaik yang tersedia di Puncak Drive. Dengan kapasitas 14-15 penumpang dalam kabin minibus yang luas dan nyaman, HiAce menjadi andalan untuk perjalanan grup wisata, acara family gathering, rombongan perusahaan, hingga carter pernikahan. Ketinggian atap yang cukup membuat penumpang bisa duduk dengan nyaman, sementara bagasi besar menampung banyak perlengkapan perjalanan.",
+  "specs": {
+    "brand": "Toyota",
+    "model": "HiAce Commuter",
+    "year": "2021-2024",
+    "fuel": "Diesel",
+    "transmission": "Manual",
+    "capacity": 15,
+    "ac": "Multi AC (Front & Rear)",
+    "condition": "Prime & Terawat"
+  },
+  "includes": [
+    "Unit Minibus Siap Pakai",
+    "Jasa Driver Professional",
+    "AC Multi Zone (Depan & Belakang)",
+    "Asuransi Kendaraan"
+  ],
+  "excludes": [
+    "BBM (Bahan Bakar Minyak)",
+    "Tol & Parkir Wisata",
+    "Makan Driver"
+  ],
+  "useCases": [
+    "Wisata Rombongan ke Puncak",
+    "Family Gathering",
+    "Perjalanan Perusahaan",
+    "Antar Jemput Bandara Grup",
+    "Carter Acara Pernikahan",
+    "Tour Bogor & Puncak"
+  ],
+  "seo": {
+    "title": "Sewa Toyota HiAce untuk Rombongan di Puncak | Puncak Drive",
+    "description": "Sewa Toyota HiAce 14-15 penumpang di Puncak mulai Rp 800.000/hari. Cocok untuk wisata rombongan, family gathering, tour group. Hubungi Puncak Drive!",
+    "keywords": ["sewa hiace puncak", "rental hiace rombongan bogor", "sewa minibus puncak murah"]
+  }
+}

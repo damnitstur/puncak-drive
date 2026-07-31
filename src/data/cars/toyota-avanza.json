@@ -1,0 +1,48 @@
+{
+  "slug": "toyota-avanza",
+  "id": "avanza",
+  "name": "Toyota Avanza",
+  "transmission": "Manual / Otomatis",
+  "capacity": "7",
+  "pricePerDay": 350,
+  "image": "/katalog1.webp",
+  "gallery": ["/katalog1.webp"],
+  "tag": "Favorit Keluarga",
+  "isPopular": true,
+  "rating": 4.8,
+  "totalRentals": 192,
+  "shortDesc": "Pilihan paling populer untuk keluarga, lega dan nyaman untuk perjalanan Puncak.",
+  "longDesc": "Toyota Avanza adalah pilihan favorit keluarga Indonesia yang telah terbukti keandalannya selama bertahun-tahun. Dengan kapasitas 7 penumpang, transmisi pilihan manual dan otomatis, serta interior yang lapang, Avanza menjadi armada paling banyak dipesan di Puncak Drive. Cocok untuk liburan keluarga ke kawasan Puncak, perjalanan wisata grup kecil, hingga keperluan operasional harian.",
+  "specs": {
+    "brand": "Toyota",
+    "model": "Avanza",
+    "year": "2022-2024",
+    "fuel": "Bensin",
+    "transmission": "Manual / Otomatis",
+    "capacity": 7,
+    "ac": "Double Blower",
+    "condition": "Prime & Terawat"
+  },
+  "includes": [
+    "Unit Mobil Siap Pakai",
+    "Jasa Driver Professional",
+    "Kenyamanan AC Double Blower",
+    "Asuransi Kendaraan"
+  ],
+  "excludes": [
+    "BBM (Bahan Bakar Minyak)",
+    "Tol & Parkir Wisata",
+    "Makan Driver"
+  ],
+  "useCases": [
+    "Liburan Keluarga ke Puncak",
+    "Perjalanan Wisata Grup Kecil",
+    "Antar Jemput Bandara",
+    "Operasional Harian"
+  ],
+  "seo": {
+    "title": "Sewa Toyota Avanza Murah di Puncak | Puncak Drive",
+    "description": "Sewa Toyota Avanza terpercaya di Puncak mulai Rp 350.000/hari. 7 penumpang, AC double blower, driver profesional. Hubungi Puncak Drive sekarang!",
+    "keywords": ["sewa avanza puncak", "rental avanza bogor", "sewa mobil avanza murah"]
+  }
+}

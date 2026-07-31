@@ -148,7 +148,7 @@ export default function BookingPage({
     window.open(mapsUrl, "_blank")
   }
 
-  const dailyPrice = parseInt(car.price) || 0
+  const dailyPrice = car.pricePerDay || 0
   const totalPrice = dailyPrice * bookingDays
   const availStatus = getCarAvailabilityStatus(car.id, selectedDate || new Date())
 

@@ -51,7 +51,7 @@ export default function CarDetailPage({
   onProceedToBooking,
 }: CarDetailPageProps) {
   const { t } = useTranslation()
-  const dailyPrice = parseInt(car.price) || 0
+  const dailyPrice = car.pricePerDay || 0
   const availStatus = getCarAvailabilityStatus(car.id)
 
   return (
@@ -151,29 +151,30 @@ export default function CarDetailPage({
 
             {/* Inclusions & Exclusions Card */}
             <Card className="bg-card border-border rounded-2xl p-5 space-y-4 shadow-md">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-foreground flex items-center gap-2">
-                <HugeiconsIcon icon={Tick01Icon} className="w-4 h-4 text-primary" />
-                Rincian Fasilitas Paket Sewa
-              </h4>
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-foreground flex items-center gap-2">
+                  <HugeiconsIcon icon={Tick01Icon} className="w-4 h-4 text-primary" />
+                  {t("detail.inclusionsTitle")}
+                </h4>
+                <span className="shrink-0 text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                  {t("detail.serviceArea")}
+                </span>
+              </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                 {/* Included */}
                 <div className="space-y-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-500">
-                    Termasuk Dalam Harga:
+                    {t("detail.includedHeading")}
                   </span>
                   <ul className="space-y-1.5 text-muted-foreground">
                     <li className="flex items-center gap-2">
                       <HugeiconsIcon icon={CheckmarkCircle02Icon} className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>Unit Mobil Siap Pakai</span>
+                      <span>{t("detail.incCar")}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <HugeiconsIcon icon={CheckmarkCircle02Icon} className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>Jasa Driver Professional</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <HugeiconsIcon icon={CheckmarkCircle02Icon} className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>Kenyamanan AC Double Blower</span>
+                      <span>{t("detail.incDriver")}</span>
                     </li>
                   </ul>
                 </div>
@@ -181,20 +182,16 @@ export default function CarDetailPage({
                 {/* Excluded */}
                 <div className="space-y-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-amber-500">
-                    Tidak Termasuk:
+                    {t("detail.excludedHeading")}
                   </span>
                   <ul className="space-y-1.5 text-muted-foreground">
                     <li className="flex items-center gap-2">
                       <HugeiconsIcon icon={CancelCircleIcon} className="w-4 h-4 text-amber-500 shrink-0" />
-                      <span>BBM (Bahan Bakar Minyak)</span>
+                      <span>{t("detail.excFuel")}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <HugeiconsIcon icon={CancelCircleIcon} className="w-4 h-4 text-amber-500 shrink-0" />
-                      <span>Tol & Parkir Wisata</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <HugeiconsIcon icon={CancelCircleIcon} className="w-4 h-4 text-amber-500 shrink-0" />
-                      <span>Makan Driver</span>
+                      <span>{t("detail.excToll")}</span>
                     </li>
                   </ul>
                 </div>

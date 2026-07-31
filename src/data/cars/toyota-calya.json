@@ -1,0 +1,49 @@
+{
+  "slug": "toyota-calya",
+  "id": "calya",
+  "name": "Toyota Calya",
+  "transmission": "Manual",
+  "capacity": "7",
+  "pricePerDay": 400,
+  "image": "/calya.webp",
+  "gallery": ["/calya.webp"],
+  "tag": "Hemat & Nyaman",
+  "isPopular": false,
+  "rating": 4.7,
+  "totalRentals": 96,
+  "shortDesc": "Pilihan hemat dan nyaman untuk keluarga kecil, irit BBM untuk perjalanan jauh.",
+  "longDesc": "Toyota Calya adalah LCGC (Low Cost Green Car) terpercaya yang menawarkan efisiensi bahan bakar terbaik di kelasnya. Dengan kapasitas 7 penumpang di bodi yang kompak, Calya sangat lincah di jalanan Puncak yang padat. Konsumsi BBM yang hemat membuat biaya perjalanan lebih terkontrol. Pilihan ideal untuk keluarga kecil, pasangan, atau traveler yang mementingkan efisiensi biaya tanpa mengorbankan kenyamanan.",
+  "specs": {
+    "brand": "Toyota",
+    "model": "Calya E / G",
+    "year": "2021-2024",
+    "fuel": "Bensin (Irit)",
+    "transmission": "Manual",
+    "capacity": 7,
+    "ac": "Double Blower",
+    "condition": "Prime & Terawat"
+  },
+  "includes": [
+    "Unit Mobil Siap Pakai",
+    "Jasa Driver Professional",
+    "Kenyamanan AC Double Blower",
+    "Asuransi Kendaraan"
+  ],
+  "excludes": [
+    "BBM (Bahan Bakar Minyak)",
+    "Tol & Parkir Wisata",
+    "Makan Driver"
+  ],
+  "useCases": [
+    "Liburan Keluarga Kecil",
+    "Wisata Pasangan",
+    "Perjalanan Harian",
+    "Budget Trip ke Puncak",
+    "Antar Jemput Lokal"
+  ],
+  "seo": {
+    "title": "Sewa Toyota Calya Murah di Puncak | Puncak Drive",
+    "description": "Sewa Toyota Calya hemat di Puncak mulai Rp 400.000/hari. Irit BBM, 7 penumpang, driver profesional. Solusi budget trip terbaik. Hubungi Puncak Drive!",
+    "keywords": ["sewa calya puncak", "rental calya bogor murah", "sewa mobil hemat puncak"]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "toyota-innova-reborn",
+  "id": "inova",
+  "name": "Toyota Innova Reborn",
+  "transmission": "Otomatis",
+  "capacity": "7",
+  "pricePerDay": 700,
+  "image": "/inova.webp",
+  "gallery": ["/inova.webp"],
+  "tag": "Terpopuler di Puncak",
+  "isPopular": true,
+  "rating": 4.9,
+  "totalRentals": 148,
+  "shortDesc": "SUV premium paling diminati untuk perjalanan Puncak, spacious dan bertenaga.",
+  "longDesc": "Toyota Innova Reborn adalah raja SUV MPV di jalanan Puncak. Dengan mesin diesel bertenaga tinggi, suspensi yang tangguh, dan kabin premium yang lapang, Innova Reborn memberikan pengalaman berkendara yang tak tertandingi di kelas MPV. Didukung transmisi otomatis yang responsif, armada ini menjadi pilihan utama para pelancong premium, keluarga besar, dan pelaku bisnis yang menghargai kenyamanan. Kapasitas bagasi besar membuatnya ideal untuk perjalanan menginap.",
+  "specs": {
+    "brand": "Toyota",
+    "model": "Innova Reborn",
+    "year": "2022-2024",
+    "fuel": "Diesel / Bensin",
+    "transmission": "Otomatis",
+    "capacity": 7,
+    "ac": "Double Blower",
+    "condition": "Prime & Terawat"
+  },
+  "includes": [
+    "Unit Mobil Siap Pakai",
+    "Jasa Driver Professional",
+    "Kenyamanan AC Double Blower",
+    "Asuransi Kendaraan"
+  ],
+  "excludes": [
+    "BBM (Bahan Bakar Minyak)",
+    "Tol & Parkir Wisata",
+    "Makan Driver"
+  ],
+  "useCases": [
+    "Perjalanan Premium ke Puncak",
+    "Liburan Keluarga Besar",
+    "Perjalanan Bisnis",
+    "Antar Jemput Bandara VIP",
+    "Tour Bogor & Sekitarnya"
+  ],
+  "seo": {
+    "title": "Sewa Toyota Innova Reborn di Puncak | Puncak Drive",
+    "description": "Sewa Toyota Innova Reborn terpercaya di Puncak mulai Rp 700.000/hari. SUV premium, 7 penumpang, driver profesional. Paling laris! Hubungi Puncak Drive.",
+    "keywords": ["sewa innova reborn puncak", "rental innova bogor", "sewa mobil innova murah puncak"]
+  }
+}

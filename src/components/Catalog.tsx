@@ -18,7 +18,6 @@ import { getCarAvailabilityStatus, isDateBooked } from "@/lib/availability"
 import { HugeiconsIcon } from "@/components/ui/icon"
 import {
   UserGroupIcon,
-  Clock01Icon,
   Alert01Icon,
   Location01Icon,
   Calendar01Icon,
@@ -33,15 +32,17 @@ import { useTranslation } from "react-i18next"
 
 export interface CarItem {
   id: string
+  slug: string
   name: string
-  transmission: string
+  transmission: string   // kept for single page (CarDetailPage/BookingPage), not shown in catalog listing
   capacity: string
-  price: string
+  pricePerDay: number
   image: string
   isPopular?: boolean
   rating?: number
   totalRentals?: number
   tag?: string
+  shortDesc?: string
 }
 
 interface CatalogProps {
@@ -72,7 +73,7 @@ function getCarImage(carName: string, carId: string): string {
 
 export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: CatalogProps) {
   const { t } = useTranslation()
-  // Catalog Header 4-Filter States
+  // Catalog Header Filter States
   const [filterCarModel, setFilterCarModel] = React.useState<string>("all")
   const [filterPickupDate, setFilterPickupDate] = React.useState<Date | undefined>(undefined)
   const [filterPickupLocation, setFilterPickupLocation] = React.useState<string>("")
@@ -91,9 +92,6 @@ export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: 
       setFilterPickupLocation(searchFilter.location)
     }
   }, [searchFilter])
-
-  // Sub-filter: Transmission
-  const [selectedTransmission, setSelectedTransmission] = React.useState<string>("all")
 
   // OpenStreetMap Nominatim search & GPS states
   const [searchResults, setSearchResults] = React.useState<string[]>([])
@@ -200,22 +198,13 @@ export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: 
       ) {
         return false
       }
-      // Transmission filter
-      if (
-        selectedTransmission !== "all" &&
-        !car.transmission.toLowerCase().includes(selectedTransmission.toLowerCase())
-      ) {
-        return false
-      }
       // Date Availability filter (if date selected, check if booked)
       if (filterPickupDate && isDateBooked(filterPickupDate, car.id)) {
         return false
       }
       return true
     })
-  }, [cars, filterCarModel, selectedTransmission, filterPickupDate, popularOnly])
-
-  const transmissions = ["all", "manual", "otomatis"]
+  }, [cars, filterCarModel, filterPickupDate, popularOnly])
 
   return (
     <section id="catalog" className="py-20 border-t border-border scroll-mt-20">
@@ -399,7 +388,6 @@ export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: 
                     setFilterCarModel("all")
                     setFilterPickupDate(undefined)
                     setFilterPickupLocation("")
-                    setSelectedTransmission("all")
                   }}
                 >
                   Reset
@@ -409,7 +397,7 @@ export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: 
 
           </div>
 
-          {/* Sub-filter: Popular Toggle, Transmission Pills & Count */}
+          {/* Sub-filter: Popular Toggle & Count */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
             <p className="text-xs text-muted-foreground font-medium">
               {t("catalog.showing")} <span className="font-bold text-foreground">{filteredCars.length}</span> {t("catalog.fleetSelection")}
@@ -425,20 +413,6 @@ export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: 
               >
                 {popularOnly ? t("catalog.popularFilter") : t("catalog.popularBtn")}
               </Button>
-
-              <div className="flex items-center gap-1.5 p-1 bg-muted rounded-xl border border-border">
-                {transmissions.map((t) => (
-                  <Button
-                    key={t}
-                    variant={selectedTransmission === t ? "default" : "secondary"}
-                    size="sm"
-                    className="capitalize text-xs tracking-wide rounded-lg font-semibold h-7 px-3"
-                    onClick={() => setSelectedTransmission(t)}
-                  >
-                    {t === "all" ? "All Types" : t === "otomatis" ? "Automatic" : "Manual"}
-                  </Button>
-                ))}
-              </div>
             </div>
           </div>
         </div>
@@ -481,11 +455,11 @@ export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: 
                         <Badge className="bg-amber-500 text-black font-extrabold text-[10px] uppercase tracking-wider px-2 py-0.5 shadow-md">
                           TERPOPULER
                         </Badge>
-                      ) : (
-                        <Badge variant="secondary" className="capitalize text-[10px] font-bold">
-                          {car.transmission}
+                      ) : car.tag ? (
+                        <Badge variant="secondary" className="text-[10px] font-bold">
+                          {car.tag}
                         </Badge>
-                      )}
+                      ) : null}
                     </div>
                   </div>
 
@@ -501,15 +475,17 @@ export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: 
                         {car.tag}
                       </p>
                     )}
+
+                    {car.shortDesc && (
+                      <p className="text-[11px] text-muted-foreground mt-2 leading-relaxed line-clamp-2">
+                        {car.shortDesc}
+                      </p>
+                    )}
+
                     <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground">
                       <div className="flex items-center gap-1.5">
                         <HugeiconsIcon icon={UserGroupIcon} className="w-3.5 h-3.5 text-primary" />
                         <span>{car.capacity} Seats</span>
-                      </div>
-                      <Separator orientation="vertical" className="h-3" />
-                      <div className="flex items-center gap-1.5">
-                        <HugeiconsIcon icon={Clock01Icon} className="w-3.5 h-3.5 text-primary" />
-                        <span className="capitalize">{car.transmission}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -518,7 +494,7 @@ export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: 
                     <div>
                       <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">{t("catalog.ratePerDay")}</p>
                       <p className="text-base sm:text-lg font-black text-foreground">
-                        Rp {parseInt(car.price).toLocaleString("id-ID")}.000
+                        Rp {car.pricePerDay.toLocaleString("id-ID")}.000
                       </p>
                     </div>
                     <div className="flex items-center gap-2">
@@ -540,7 +516,7 @@ export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: 
           <Card className="bg-card text-card-foreground border-border p-12 rounded-2xl text-center flex flex-col items-center max-w-lg mx-auto">
             <HugeiconsIcon icon={Alert01Icon} className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-lg font-bold text-foreground">{t("catalog.noCars")}</h3>
-            <Button className="mt-6 uppercase tracking-widest text-xs font-bold" size="sm" onClick={() => setSelectedTransmission("all")}>
+            <Button className="mt-6 uppercase tracking-widest text-xs font-bold" size="sm" onClick={() => { setFilterCarModel("all"); setFilterPickupDate(undefined); setFilterPickupLocation("") }}>
               {t("catalog.resetFilter")}
             </Button>
           </Card>

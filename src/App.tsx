@@ -15,7 +15,7 @@ import PrivacyPage from "./components/PrivacyPage"
 import CookiesPage from "./components/CookiesPage"
 import SitemapPage from "./components/SitemapPage"
 
-import catalogData from "./data/data-katalog.json"
+import carsData from "./data/cars.json"
 
 const queryClient = new QueryClient()
 
@@ -96,88 +96,11 @@ function MainApp() {
 
   const brandName = "Puncak Drive"
 
-  // Use TanStack Query to fetch catalog cars
+  // Load cars from clean cars.json
   const { data: cars = [] } = useQuery<CarItem[]>({
     queryKey: ["carsCatalog"],
     queryFn: async () => {
-      const rawDummy = catalogData.katalog.dummy
-
-      const parsedCars: CarItem[] = Object.entries(rawDummy).map(([key, rawCar]: [string, any]) => {
-        let capacity = "7"
-        if (rawCar.capacity?.$value) {
-          capacity = rawCar.capacity.$value
-        } else if (key.toLowerCase() === "hiace") {
-          capacity = "14-15"
-        }
-
-        let transmission = "Manual"
-        if (rawCar.transmisi?.$value) {
-          transmission = rawCar.transmisi.$value
-        } else if (rawCar.tranmisi?.$value) {
-          transmission = rawCar.tranmisi.$value
-        } else if (key.toLowerCase() === "inova" || key.toLowerCase() === "avanza new") {
-          transmission = "Otomatis"
-        }
-
-        let price = "400"
-        if (rawCar.pirce?.$value) {
-          price = rawCar.pirce.$value
-        } else if (key.toLowerCase() === "avanza new") {
-          price = "500"
-        } else if (key.toLowerCase() === "hiace") {
-          price = "800"
-        } else if (key.toLowerCase() === "inova") {
-          price = "700"
-        } else if (key.toLowerCase() === "avanza") {
-          price = "350"
-        }
-
-        let isPopular = false
-        let rating = 4.8
-        let totalRentals = 95
-        let tag = "Armada Prima"
-
-        const keyLower = key.toLowerCase()
-        if (keyLower.includes("inova") || keyLower.includes("innova")) {
-          isPopular = true
-          rating = 4.9
-          totalRentals = 148
-          tag = "Terpopuler di Puncak"
-        } else if (keyLower.includes("hiace")) {
-          isPopular = true
-          rating = 4.9
-          totalRentals = 125
-          tag = "Paling Laris Rombongan"
-        } else if (keyLower.includes("avanza")) {
-          isPopular = true
-          rating = 4.8
-          totalRentals = 192
-          tag = "Favorit Keluarga"
-        } else if (keyLower.includes("rush")) {
-          rating = 4.7
-          totalRentals = 84
-          tag = "SUV Tangguh"
-        } else if (keyLower.includes("calya")) {
-          rating = 4.7
-          totalRentals = 96
-          tag = "Hemat & Nyaman"
-        }
-
-        return {
-          id: key,
-          name: rawCar.name?.$value || key,
-          transmission,
-          capacity,
-          price,
-          image: "",
-          isPopular,
-          rating,
-          totalRentals,
-          tag,
-        }
-      })
-
-      return parsedCars
+      return (carsData as CarItem[])
     },
     initialData: [],
   })

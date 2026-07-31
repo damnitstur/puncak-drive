@@ -1,0 +1,49 @@
+{
+  "slug": "toyota-rush",
+  "id": "rush",
+  "name": "Toyota Rush",
+  "transmission": "Manual",
+  "capacity": "7",
+  "pricePerDay": 400,
+  "image": "/rush.webp",
+  "gallery": ["/rush.webp"],
+  "tag": "SUV Tangguh",
+  "isPopular": false,
+  "rating": 4.7,
+  "totalRentals": 84,
+  "shortDesc": "SUV tangguh dengan ground clearance tinggi, cocok untuk medan Puncak yang berkelok.",
+  "longDesc": "Toyota Rush adalah SUV compact yang menggabungkan ketangguhan di medan berat dengan kenyamanan penumpang. Ground clearance yang tinggi membuatnya sangat cocok untuk jalanan berkelok dan berbukit khas kawasan Puncak. Desain eksterior sporty dan interior yang fungsional menjadikan Rush pilihan sempurna bagi keluarga muda yang aktif dan suka berpetualang.",
+  "specs": {
+    "brand": "Toyota",
+    "model": "Rush TRD Sportivo / S",
+    "year": "2021-2024",
+    "fuel": "Bensin",
+    "transmission": "Manual",
+    "capacity": 7,
+    "ac": "Double Blower",
+    "condition": "Prime & Terawat"
+  },
+  "includes": [
+    "Unit Mobil Siap Pakai",
+    "Jasa Driver Professional",
+    "Kenyamanan AC Double Blower",
+    "Asuransi Kendaraan"
+  ],
+  "excludes": [
+    "BBM (Bahan Bakar Minyak)",
+    "Tol & Parkir Wisata",
+    "Makan Driver"
+  ],
+  "useCases": [
+    "Liburan Keluarga Muda",
+    "Wisata Alam Puncak",
+    "Perjalanan Off-road Ringan",
+    "Antar Jemput Bandara",
+    "Perjalanan Harian"
+  ],
+  "seo": {
+    "title": "Sewa Toyota Rush di Puncak | SUV Tangguh | Puncak Drive",
+    "description": "Sewa Toyota Rush di Puncak mulai Rp 400.000/hari. SUV tangguh 7 penumpang untuk medan Puncak. Driver profesional, armada terawat. Hubungi Puncak Drive!",
+    "keywords": ["sewa rush puncak", "rental suv puncak bogor", "sewa toyota rush murah"]
+  }
+}
