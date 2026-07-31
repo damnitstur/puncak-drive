@@ -43,7 +43,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- Static Pages -->
+  <!-- Static Pages & Main Sections -->
   <url>
     <loc>https://puncakdrive.com/about</loc>
     <lastmod>2026-07-31</lastmod>

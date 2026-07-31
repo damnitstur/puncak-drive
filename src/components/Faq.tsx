@@ -78,18 +78,16 @@ export default function Faq() {
                 key={index}
                 open={isOpen}
                 onOpenChange={(open) => setOpenIndex(open ? index : null)}
-                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                  isOpen
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen
                     ? "bg-card border-primary/40 shadow-lg shadow-primary/5"
                     : "bg-card/60 border-border hover:border-border/80"
-                }`}
+                  }`}
               >
                 <CollapsibleTrigger className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 group cursor-pointer">
                   <div className="flex items-center gap-3 min-w-0">
                     <div
-                      className={`p-2 rounded-xl shrink-0 transition-colors ${
-                        isOpen ? "bg-primary/20 text-primary" : "bg-muted text-muted-foreground group-hover:text-foreground"
-                      }`}
+                      className={`p-2 rounded-xl shrink-0 transition-colors ${isOpen ? "bg-primary/20 text-primary" : "bg-muted text-muted-foreground group-hover:text-foreground"
+                        }`}
                     >
                       <HugeiconsIcon icon={HelpCircleIcon} className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
@@ -100,13 +98,12 @@ export default function Faq() {
 
                   <HugeiconsIcon
                     icon={ArrowDown01Icon}
-                    className={`w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 text-primary" : ""
-                    }`}
+                    className={`w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-primary" : ""
+                      }`}
                   />
                 </CollapsibleTrigger>
 
-                <CollapsibleContent className="px-5 sm:px-6 pb-6 pt-0 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-border/40 mt-1">
+                <CollapsibleContent className="px-5 sm:px-6 pb-6 pt-0 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-border mt-1">
                   <p className="pt-4">{item.a}</p>
                 </CollapsibleContent>
               </Collapsible>
