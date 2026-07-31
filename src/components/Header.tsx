@@ -17,22 +17,6 @@ interface HeaderProps {
 function Header({ brandName, activePage = "home", onNavigateAbout, onNavigateHome }: HeaderProps) {
   const { t } = useTranslation()
   const [isOpen, setIsOpen] = React.useState(false)
-  const [scrolled, setScrolled] = React.useState(false)
-
-  React.useEffect(() => {
-    let ticking = false
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 20)
-          ticking = false
-        })
-        ticking = true
-      }
-    }
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
 
   const getLinkClass = (pageName: string) => {
     const isActive = activePage === pageName
