@@ -9,14 +9,15 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
 
 export default function Faq() {
   const { t } = useTranslation()
   const [openIndex, setOpenIndex] = React.useState<number | null>(0)
-
-  const toggleFaq = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
 
   const faqList = [
     {
@@ -46,7 +47,7 @@ export default function Faq() {
   ]
 
   return (
-    <section id="faq" className="dark py-16 sm:py-24 bg-background relative overflow-hidden">
+    <section id="faq" className="py-16 sm:py-24 bg-background relative overflow-hidden">
       {/* Background Ambient Lights */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[700px] h-[250px] sm:h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
@@ -68,24 +69,22 @@ export default function Faq() {
           </p>
         </div>
 
-        {/* FAQ Accordion List */}
+        {/* FAQ Accordion List using Collapsible */}
         <div className="space-y-3">
           {faqList.map((item, index) => {
             const isOpen = openIndex === index
             return (
-              <div
+              <Collapsible
                 key={index}
+                open={isOpen}
+                onOpenChange={(open) => setOpenIndex(open ? index : null)}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
                     ? "bg-card border-primary/40 shadow-lg shadow-primary/5"
                     : "bg-card/60 border-border hover:border-border/80"
                 }`}
               >
-                <button
-                  type="button"
-                  onClick={() => toggleFaq(index)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 group"
-                >
+                <CollapsibleTrigger className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 group cursor-pointer">
                   <div className="flex items-center gap-3 min-w-0">
                     <div
                       className={`p-2 rounded-xl shrink-0 transition-colors ${
@@ -105,14 +104,12 @@ export default function Faq() {
                       isOpen ? "rotate-180 text-primary" : ""
                     }`}
                   />
-                </button>
+                </CollapsibleTrigger>
 
-                {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-0 text-xs sm:text-sm text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-top-1 duration-200 border-t border-border/40 mt-1">
-                    <p className="pt-4">{item.a}</p>
-                  </div>
-                )}
-              </div>
+                <CollapsibleContent className="px-5 sm:px-6 pb-6 pt-0 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-border/40 mt-1">
+                  <p className="pt-4">{item.a}</p>
+                </CollapsibleContent>
+              </Collapsible>
             )
           })}
         </div>
