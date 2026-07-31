@@ -56,13 +56,11 @@ function Header({ brandName, activePage = "home", onNavigateAbout, onNavigateHom
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "dark bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg"
-          : "dark bg-background/40 backdrop-blur-md border-b border-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
+        scrolled ? "dark text-muted-foreground bg-background/0 backdrop-blur-md" : "dark text-primary"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
