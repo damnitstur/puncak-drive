@@ -94,7 +94,7 @@ function Services() {
           {serviceItems.map((item, index) => (
             <Card
               key={index}
-              className="bg-card/70 backdrop-blur-md border-border/60 rounded-2xl hover:border-primary/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-primary/5 group"
+              className="bg-card border-border rounded-2xl transition-all duration-300 hover:-translate-y-1.5 group"
             >
               <CardContent className="p-6 space-y-4">
                 <div className="p-3 bg-secondary/80 rounded-xl w-fit group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-300">

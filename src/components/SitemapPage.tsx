@@ -88,6 +88,17 @@ export default function SitemapPage({ onNavigate, onBack }: SitemapPageProps) {
               </button>
 
               <button
+                onClick={() => { onNavigate("home"); setTimeout(() => { document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" }) }, 100); }}
+                className="p-4 bg-muted/40 hover:bg-accent rounded-2xl border border-border text-left transition-colors flex items-center justify-between group font-bold text-xs"
+              >
+                <div className="flex items-center gap-2.5">
+                  <HugeiconsIcon icon={CheckmarkCircle02Icon} className="w-4 h-4 text-primary shrink-0" />
+                  <span>FAQ & Tanya Jawab</span>
+                </div>
+                <span className="text-[10px] text-muted-foreground group-hover:text-primary font-mono">/</span>
+              </button>
+
+              <button
                 onClick={() => onNavigate("about")}
                 className="p-4 bg-muted/40 hover:bg-accent rounded-2xl border border-border text-left transition-colors flex items-center justify-between group font-bold text-xs"
               >

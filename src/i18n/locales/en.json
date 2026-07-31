@@ -273,6 +273,26 @@
     "cookies": "Cookie Policy",
     "contactSupport": "WhatsApp Help & Reservation"
   },
+  "faq": {
+    "badge": "Frequently Asked Questions",
+    "title": "FAQ & Help",
+    "subtitle": "Complete information regarding Puncak Drive car rental with driver services.",
+    "q1": "Can I rent a car without a driver (self-drive)?",
+    "a1": "All Puncak Drive vehicles are rented exclusively with a professional driver (no self-drive). Our experienced drivers ensure your comfort, safety, and stress-free navigation through Puncak traffic.",
+    "q2": "Does the rental price include fuel, tolls, and parking?",
+    "a2": "The listed rate includes the vehicle and professional driver service (12-hour package). Fuel, highway tolls, tourist parking fees, and driver meals are covered by the renter.",
+    "q3": "What is the payment procedure? Is a down payment required?",
+    "a3": "Reservations at Puncak Drive require No Down Payment (Zero DP). Bookings are confirmed directly via WhatsApp and payment is settled via cash or transfer upon pickup.",
+    "q4": "Can the driver recommend tourist spots and villas in Puncak?",
+    "a4": "Absolutely! All Puncak Drive drivers are local experts who know alternative routes, top family villas, and popular dining spots throughout Puncak.",
+    "q5": "How are Puncak one-way traffic rules (Buka-Tutup) handled?",
+    "a5": "Our drivers are highly experienced in navigating Puncak one-way schedules and using safe alternative routes to bypass heavy congestion.",
+    "q6": "Which areas are covered for pickup?",
+    "a6": "We provide pickup across Greater Jakarta (Jabodetabek), Soekarno-Hatta / Halim Airports, and train stations, for travel to Puncak, Cianjur, Bandung, and surrounding areas.",
+    "stillHaveQuestions": "Still Have Questions?",
+    "contactSupportText": "Our Customer Service team is available 24/7 on WhatsApp to assist you.",
+    "chatWhatsapp": "Ask CS via WhatsApp"
+  },
   "footer": {
     "tagline": "Your Primary Mobility Partner in Puncak, Bogor, and Surroundings.",
     "quickLinks": "Quick Links",

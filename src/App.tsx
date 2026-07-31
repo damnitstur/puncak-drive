@@ -5,6 +5,7 @@ import Hero from "./components/Hero"
 import Catalog from "./components/Catalog"
 import type { CarItem } from "./components/Catalog"
 import Services from "./components/Services"
+import Faq from "./components/Faq"
 import Footer from "./components/Footer"
 
 const BookingPage = React.lazy(() => import("./components/BookingPage"))
@@ -317,6 +318,7 @@ function MainApp() {
           onSelectCar={handleSelectCar}
         />
         <Services />
+        <Faq />
       </div>
       <Footer
         brandName={brandName}
