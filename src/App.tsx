@@ -7,13 +7,13 @@ import type { CarItem } from "./components/Catalog"
 import Services from "./components/Services"
 import Footer from "./components/Footer"
 
-import BookingPage from "./components/BookingPage"
-import CarDetailPage from "./components/CarDetailPage"
-import AboutPage from "./components/AboutPage"
-import TermsPage from "./components/TermsPage"
-import PrivacyPage from "./components/PrivacyPage"
-import CookiesPage from "./components/CookiesPage"
-import SitemapPage from "./components/SitemapPage"
+const BookingPage = React.lazy(() => import("./components/BookingPage"))
+const CarDetailPage = React.lazy(() => import("./components/CarDetailPage"))
+const AboutPage = React.lazy(() => import("./components/AboutPage"))
+const TermsPage = React.lazy(() => import("./components/TermsPage"))
+const PrivacyPage = React.lazy(() => import("./components/PrivacyPage"))
+const CookiesPage = React.lazy(() => import("./components/CookiesPage"))
+const SitemapPage = React.lazy(() => import("./components/SitemapPage"))
 
 import carsData from "./data/cars.json"
 
@@ -331,7 +331,9 @@ function MainApp() {
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <MainApp />
+      <React.Suspense fallback={<div className="min-h-screen bg-background" />}>
+        <MainApp />
+      </React.Suspense>
     </QueryClientProvider>
   )
 }

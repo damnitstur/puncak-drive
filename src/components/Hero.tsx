@@ -141,9 +141,9 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
       className="dark relative w-full overflow-hidden flex flex-col min-h-svh lg:h-svh bg-background bg-gradient-to-r from-25% via-50% to-75% from-background via-muted to-background"
     >
       <div className="absolute inset-0 bg-background opacity-60 bg-gradient-to-b from-background via-card to-background"></div>
-      {/* GPU Hardware-Accelerated Ambient Light Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[350px] sm:h-[500px] bg-primary/10 rounded-full blur-[140px] pointer-events-none transform-gpu"></div>
-      <div className="absolute bottom-10 right-10 w-[300px] sm:w-[500px] h-[250px] sm:h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none transform-gpu"></div>
+      {/* GPU Hardware-Accelerated Ambient Light Glows (Optimized blur for mobile GPU) */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[900px] h-[200px] sm:h-[500px] bg-primary/10 rounded-full blur-[50px] sm:blur-[120px] pointer-events-none transform-gpu"></div>
+      <div className="absolute bottom-10 right-10 w-[200px] sm:w-[500px] h-[150px] sm:h-[400px] bg-primary/5 rounded-full blur-[40px] sm:blur-[100px] pointer-events-none transform-gpu"></div>
 
       {/* Subtle Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
@@ -207,6 +207,8 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
                   key={activeCarFilter}
                   src={currentCarImage}
                   alt={activeCarFilter}
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full object-contain transition-all duration-300 animate-in fade-in zoom-in-95 max-h-[220px] sm:max-h-[320px] lg:max-h-full pointer-events-none"
                   style={{ objectPosition: "bottom" }}
                 />

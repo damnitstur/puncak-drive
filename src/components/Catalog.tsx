@@ -436,6 +436,8 @@ export default function Catalog({ cars, searchFilter, onBookCar, onSelectCar }: 
                     <img
                       src={getCarImage(car.name, car.id)}
                       alt={car.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300 z-0"
                     />
 
