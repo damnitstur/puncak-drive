@@ -199,7 +199,7 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
 
               {/* Car image showcase — Touch Swipe enabled on mobile, click/list selection on desktop */}
               <div
-                className="relative flex-1 w-full max-w-3xl flex flex-col items-center justify-end min-h-[220px] sm:min-h-[280px] lg:min-h-0 select-none my-2 group"
+                className="relative flex-1 w-full max-w-3xl flex items-end justify-center min-h-[180px] sm:min-h-[260px] lg:min-h-0 select-none my-4"
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
@@ -223,20 +223,18 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
                   <HugeiconsIcon icon={ArrowRight01Icon} className="w-5 h-5" />
                 </button>
 
-                {/* Car Image with transition */}
-                <div className="w-full flex justify-center items-end flex-1 pointer-events-none">
-                  <img
-                    key={activeCarFilter}
-                    src={currentCarImage}
-                    alt={activeCarFilter}
-                    className="w-full object-contain transition-all duration-300 animate-in fade-in zoom-in-95 max-h-[200px] sm:max-h-[280px] lg:max-h-full"
-                    style={{ objectPosition: "bottom" }}
-                  />
-                </div>
+                {/* Car Image (Identical layout to original desktop view) */}
+                <img
+                  key={activeCarFilter}
+                  src={currentCarImage}
+                  alt={activeCarFilter}
+                  className="w-full object-contain transition-all duration-300 animate-in fade-in zoom-in-95 max-h-[220px] sm:max-h-[320px] lg:max-h-full pointer-events-none"
+                  style={{ objectPosition: "bottom" }}
+                />
 
                 {/* Mobile Carousel Indicators & Car Name Badge */}
-                <div className="lg:hidden flex flex-col items-center gap-2 mt-2 z-20">
-                  <span className="text-[11px] font-extrabold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 px-3 py-0.5 rounded-full">
+                <div className="lg:hidden absolute -bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-20 pointer-events-auto">
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full shadow-sm">
                     {sidebarCars[activeIndex]?.name || activeCarFilter}
                   </span>
 
@@ -247,11 +245,10 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
                         key={car.id}
                         type="button"
                         onClick={() => setActiveCarFilter(car.id)}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${
-                          idx === activeIndex
-                            ? "w-6 bg-primary"
-                            : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
-                        }`}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${idx === activeIndex
+                          ? "w-5 bg-primary"
+                          : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
+                          }`}
                         aria-label={`Select ${car.name}`}
                       />
                     ))}
