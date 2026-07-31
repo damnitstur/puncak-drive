@@ -15,7 +15,6 @@ import {
   Fuel01Icon,
   SentIcon,
   InformationCircleIcon,
-  SparklesIcon,
   Calendar02Icon,
 } from "@hugeicons/core-free-icons"
 import { useTranslation } from "react-i18next"
@@ -60,7 +59,7 @@ export default function CarDetailPage({
   return (
     <div className="min-h-screen bg-background text-foreground py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-8">
-        
+
         {/* Back Button */}
         <div>
           <Button
@@ -93,7 +92,7 @@ export default function CarDetailPage({
 
         {/* 2-Column Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* LEFT COLUMN: Car Image Showcase (6 Cols) */}
           <div className="lg:col-span-6 space-y-4">
             <Card className="bg-card border-border rounded-2xl overflow-hidden shadow-xl">
@@ -107,13 +106,12 @@ export default function CarDetailPage({
                 {/* Status Badge */}
                 <Badge
                   variant="outline"
-                  className={`absolute top-4 left-4 text-[10px] font-bold ${
-                    availStatus.isAvailable
+                  className={`absolute top-4 left-4 text-[10px] font-bold ${availStatus.isAvailable
                       ? "bg-emerald-500/10 text-emerald-500 border-emerald-500/30"
                       : "bg-amber-500/10 text-amber-500 border-amber-500/30"
-                  }`}
+                    }`}
                 >
-                  {availStatus.isAvailable ? "Tersedia Hari Ini" : "Tersewa (Booked)"}
+                  {availStatus.isAvailable ? t("catalog.available") : t("catalog.booked")}
                 </Badge>
 
                 {/* Driver Included Badge */}
@@ -297,7 +295,7 @@ export default function CarDetailPage({
                   <HugeiconsIcon icon={SentIcon} className="w-4 h-4" />
                   {t("detail.proceedBtn")}
                 </Button>
-                
+
                 <p className="text-[10px] text-center text-muted-foreground">
                   🔒 {t("detail.noPrepayment")}
                 </p>
