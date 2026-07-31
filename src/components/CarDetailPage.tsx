@@ -19,6 +19,7 @@ import {
 import { useTranslation } from "react-i18next"
 import type { CarItem } from "./Catalog"
 import { getCarAvailabilityStatus, getBookedDates } from "@/lib/availability"
+import CarDetailWhatsAppBar from "./CarDetailWhatsAppBar"
 
 interface CarDetailPageProps {
   car: CarItem
@@ -56,7 +57,7 @@ export default function CarDetailPage({
   const bookedDates = getBookedDates(car.id)
 
   return (
-    <div className="min-h-screen py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-10 sm:py-16 pb-28 sm:pb-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-8">
         <div>
           <Button
@@ -305,6 +306,9 @@ export default function CarDetailPage({
 
         </div>
       </div>
+
+      {/* Sticky WhatsApp Bottom Navigation Bar */}
+      <CarDetailWhatsAppBar car={car} onProceedToBooking={onProceedToBooking} />
     </div>
   )
 }
