@@ -234,10 +234,6 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
 
                 {/* Mobile Carousel Indicators & Car Name Badge */}
                 <div className="lg:hidden absolute -bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-20 pointer-events-auto">
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full shadow-sm">
-                    {sidebarCars[activeIndex]?.name || activeCarFilter}
-                  </span>
-
                   {/* Dots indicator */}
                   <div className="flex items-center gap-1.5">
                     {sidebarCars.map((car, idx) => (
@@ -257,7 +253,7 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
               </div>
 
               {/* SEARCH BAR — Mobile-stacked & Desktop horizontal */}
-              <div className="relative z-20 w-full flex-shrink-0">
+              <div className="relative z-20 w-full flex-shrink-0 hidden md:block">
                 <form onSubmit={handleSearchSubmit} className="max-w-2xl mx-auto">
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center rounded-2xl overflow-hidden shadow-2xl bg-card/80 backdrop-blur-md border border-border p-1 sm:p-0">
 

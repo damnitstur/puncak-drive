@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Calendar } from "@/components/ui/calendar"
 import { Separator } from "@/components/ui/separator"
 import { HugeiconsIcon } from "@/components/ui/icon"
@@ -10,7 +10,6 @@ import {
   Clock01Icon,
   CheckmarkCircle02Icon,
   CancelCircleIcon,
-  Tick01Icon,
   UserCheck01Icon,
   Fuel01Icon,
   SentIcon,
