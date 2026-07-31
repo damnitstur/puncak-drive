@@ -1,4 +1,3 @@
-import * as React from "react"
 import { Button } from "@/components/ui/button"
 import { HugeiconsIcon } from "@/components/ui/icon"
 import { WhatsappIcon, SentIcon } from "@hugeicons/core-free-icons"
