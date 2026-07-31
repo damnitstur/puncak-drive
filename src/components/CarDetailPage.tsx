@@ -122,7 +122,7 @@ export default function CarDetailPage({
                   className="absolute top-4 right-4 text-[10px] font-bold bg-primary text-primary-foreground gap-1"
                 >
                   <HugeiconsIcon icon={UserCheck01Icon} className="w-3 h-3" />
-                  + Driver Included
+                  {t("detail.driverIncluded")}
                 </Badge>
               </div>
 
@@ -130,7 +130,7 @@ export default function CarDetailPage({
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
-                      Kategori Armada
+                      {t("detail.categoryTitle")}
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-black text-foreground capitalize">
                       {car.name}
@@ -138,7 +138,7 @@ export default function CarDetailPage({
                   </div>
                   <div className="text-right">
                     <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
-                      Tarif / 12 - 24 Jam
+                      {t("detail.rateTitle")}
                     </span>
                     <p className="text-2xl font-black text-primary">
                       Rp {dailyPrice.toLocaleString("id-ID")}.000
@@ -147,7 +147,7 @@ export default function CarDetailPage({
                 </div>
 
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Kendaraan dalam kondisi prima, selalu dibersihkan dan disemprot disinfektan sebelum pengantaran. Didampingi driver lokal ramah yang menguasai rute jalan alternatif Puncak.
+                  {t("detail.description")}
                 </p>
               </CardContent>
             </Card>
@@ -210,10 +210,10 @@ export default function CarDetailPage({
                   variant="outline"
                   className="border-primary/30 text-primary text-[10px] tracking-widest uppercase font-bold mb-2"
                 >
-                  Spesifikasi Kendaraan
+                  {t("detail.specTitle")}
                 </Badge>
                 <h3 className="text-xl font-extrabold text-foreground">
-                  Fitur Utama {car.name}
+                  {t("detail.featuresTitle", { name: car.name })}
                 </h3>
               </div>
 
@@ -221,26 +221,26 @@ export default function CarDetailPage({
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 bg-muted/60 rounded-xl border border-border space-y-1">
                   <HugeiconsIcon icon={UserCheck01Icon} className="w-5 h-5 text-primary" />
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase">Layanan Driver</p>
-                  <p className="text-xs font-bold text-foreground">Termasuk Driver</p>
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase">{t("detail.driverService")}</p>
+                  <p className="text-xs font-bold text-foreground">{t("detail.driverIncludedVal")}</p>
                 </div>
 
                 <div className="p-4 bg-muted/60 rounded-xl border border-border space-y-1">
                   <HugeiconsIcon icon={UserGroupIcon} className="w-5 h-5 text-primary" />
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase">Kapasitas Kursi</p>
-                  <p className="text-xs font-bold text-foreground">{car.capacity} Penumpang</p>
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase">{t("detail.capacity")}</p>
+                  <p className="text-xs font-bold text-foreground">{car.capacity} {t("detail.passengers")}</p>
                 </div>
 
                 <div className="p-4 bg-muted/60 rounded-xl border border-border space-y-1">
                   <HugeiconsIcon icon={Clock01Icon} className="w-5 h-5 text-primary" />
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase">Tipe Transmisi</p>
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase">{t("detail.transmission")}</p>
                   <p className="text-xs font-bold text-foreground capitalize">{car.transmission}</p>
                 </div>
 
                 <div className="p-4 bg-muted/60 rounded-xl border border-border space-y-1">
                   <HugeiconsIcon icon={Fuel01Icon} className="w-5 h-5 text-primary" />
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase">Kondisi Kebersihan</p>
-                  <p className="text-xs font-bold text-foreground">100% Bersih & Harum</p>
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase">{t("detail.hygiene")}</p>
+                  <p className="text-xs font-bold text-foreground">{t("detail.hygieneVal")}</p>
                 </div>
               </div>
 

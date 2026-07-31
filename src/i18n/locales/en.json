@@ -51,6 +51,7 @@
     "categoryTitle": "Fleet Category",
     "description": "Vehicles in prime condition, cleaned and sanitized before every delivery. Accompanied by friendly local drivers who master Puncak alternative routes.",
     "specTitle": "Vehicle Specifications",
+    "featuresTitle": "Key Features of {{name}}",
     "driverService": "Driver Service",
     "driverIncludedVal": "Driver Included",
     "capacity": "Seating Capacity",

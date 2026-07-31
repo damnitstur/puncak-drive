@@ -51,6 +51,7 @@
     "categoryTitle": "Kategori Armada",
     "description": "Kendaraan dalam kondisi prima, selalu dibersihkan dan disemprot disinfektan sebelum pengantaran. Didampingi driver lokal ramah yang menguasai rute jalan alternatif Puncak.",
     "specTitle": "Spesifikasi Kendaraan",
+    "featuresTitle": "Fitur Utama {{name}}",
     "driverService": "Layanan Driver",
     "driverIncludedVal": "Termasuk Driver",
     "capacity": "Kapasitas Kursi",
