@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
+import { Calendar } from "@/components/ui/calendar"
 import { Separator } from "@/components/ui/separator"
 import { HugeiconsIcon } from "@/components/ui/icon"
 import {
@@ -15,10 +16,11 @@ import {
   SentIcon,
   InformationCircleIcon,
   SparklesIcon,
+  Calendar02Icon,
 } from "@hugeicons/core-free-icons"
 import { useTranslation } from "react-i18next"
 import type { CarItem } from "./Catalog"
-import { getCarAvailabilityStatus } from "@/lib/availability"
+import { getCarAvailabilityStatus, getBookedDates } from "@/lib/availability"
 
 interface CarDetailPageProps {
   car: CarItem
@@ -53,6 +55,7 @@ export default function CarDetailPage({
   const { t } = useTranslation()
   const dailyPrice = car.pricePerDay || 0
   const availStatus = getCarAvailabilityStatus(car.id)
+  const bookedDates = getBookedDates(car.id)
 
   return (
     <div className="min-h-screen bg-background text-foreground py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
@@ -243,23 +246,42 @@ export default function CarDetailPage({
 
               <Separator />
 
-              {/* Service Commitments */}
+              {/* Availability Calendar */}
               <div className="space-y-3">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  {t("detail.advantagesTitle")}
+                <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                  <HugeiconsIcon icon={Calendar02Icon} className="w-4 h-4 text-primary" />
+                  {t("detail.availabilityTitle")}
                 </h4>
-                <div className="space-y-2 text-xs text-muted-foreground">
-                  <div className="flex items-start gap-2.5">
-                    <HugeiconsIcon icon={SparklesIcon} className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span>{t("detail.adv1")}</span>
+
+                <div className="rounded-xl border border-border bg-muted/30 overflow-hidden">
+                  <Calendar
+                    mode="single"
+                    showOutsideDays={false}
+                    disabled={[
+                      { before: new Date() },
+                      ...bookedDates,
+                    ]}
+                    modifiers={{ booked: bookedDates }}
+                    modifiersClassNames={{
+                      booked: "!bg-red-500/15 !text-red-400 !rounded-md line-through",
+                    }}
+                    className="w-full [--cell-size:--spacing(9)]"
+                  />
+                </div>
+
+                {/* Legend */}
+                <div className="flex items-center gap-4 text-[11px] text-muted-foreground px-1">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-3 h-3 rounded-sm bg-primary inline-block" />
+                    <span>{t("detail.legendAvailable")}</span>
                   </div>
-                  <div className="flex items-start gap-2.5">
-                    <HugeiconsIcon icon={SparklesIcon} className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span>{t("detail.adv2")}</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-3 h-3 rounded-sm bg-red-500/30 inline-block" />
+                    <span>{t("detail.legendBooked")}</span>
                   </div>
-                  <div className="flex items-start gap-2.5">
-                    <HugeiconsIcon icon={SparklesIcon} className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span>{t("detail.adv3")}</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-3 h-3 rounded-sm bg-muted inline-block opacity-50" />
+                    <span>{t("detail.legendPast")}</span>
                   </div>
                 </div>
               </div>
