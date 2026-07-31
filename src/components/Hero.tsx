@@ -204,25 +204,6 @@ function Hero({ sidebarCars, activeCarFilter, setActiveCarFilter, onSearch }: He
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
               >
-                {/* Mobile Left & Right Swipe Arrow Buttons */}
-                <button
-                  type="button"
-                  onClick={handlePrevSlide}
-                  aria-label="Previous Car"
-                  className="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-background/60 backdrop-blur-md border border-border text-foreground/80 hover:text-foreground hover:bg-background/90 transition-all shadow-lg active:scale-95"
-                >
-                  <HugeiconsIcon icon={ArrowLeft01Icon} className="w-5 h-5" />
-                </button>
-
-                <button
-                  type="button"
-                  onClick={handleNextSlide}
-                  aria-label="Next Car"
-                  className="lg:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-background/60 backdrop-blur-md border border-border text-foreground/80 hover:text-foreground hover:bg-background/90 transition-all shadow-lg active:scale-95"
-                >
-                  <HugeiconsIcon icon={ArrowRight01Icon} className="w-5 h-5" />
-                </button>
-
                 {/* Car Image (Identical layout to original desktop view) */}
                 <img
                   key={activeCarFilter}
