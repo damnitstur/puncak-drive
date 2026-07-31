@@ -14,20 +14,6 @@
     "shortDesc": "Pilihan paling populer untuk keluarga, lega dan nyaman untuk perjalanan Puncak."
   },
   {
-    "slug": "toyota-avanza-new",
-    "id": "avanza-new",
-    "name": "Toyota Avanza New",
-    "transmission": "Otomatis",
-    "capacity": "7",
-    "pricePerDay": 550,
-    "image": "/katalog1.webp",
-    "tag": "All New Generation",
-    "isPopular": false,
-    "rating": 4.8,
-    "totalRentals": 1,
-    "shortDesc": "Generasi terbaru Avanza dengan transmisi otomatis dan fitur modern yang lebih canggih."
-  },
-  {
     "slug": "toyota-innova-reborn",
     "id": "inova",
     "name": "Toyota Innova Reborn",
