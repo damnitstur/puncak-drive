@@ -29,12 +29,35 @@ const HERO_CARS = [
 
 type PageRoute = "home" | "detail" | "booking" | "about" | "terms" | "privacy" | "cookies" | "sitemap"
 
-function getPageFromPath(): PageRoute {
+interface RouteState {
+  page: PageRoute
+  slug?: string
+}
+
+function parsePath(): RouteState {
   const path = window.location.pathname.replace(/^\/+|\/+$/g, "")
   if (["about", "terms", "privacy", "cookies", "sitemap"].includes(path)) {
-    return path as PageRoute
+    return { page: path as PageRoute }
   }
-  return "home"
+
+  const parts = path.split("/")
+  if (parts[0] === "armada" && parts[1]) {
+    const slug = parts[1]
+    if (parts[2] === "booking") {
+      return { page: "booking", slug }
+    }
+    return { page: "detail", slug }
+  }
+
+  // Fallback check if path directly matches a car slug (e.g. /toyota-avanza)
+  const matchedCar = (carsData as CarItem[]).find(
+    (c) => c.slug === path || c.id === path
+  )
+  if (matchedCar) {
+    return { page: "detail", slug: matchedCar.slug }
+  }
+
+  return { page: "home" }
 }
 
 function MainApp() {
@@ -46,25 +69,32 @@ function MainApp() {
     pickupLocation: "",
   })
 
-  const [viewPage, setViewPage] = React.useState<PageRoute>(() => getPageFromPath())
+  const [routeState, setRouteState] = React.useState<RouteState>(() => parsePath())
   const [selectedCar, setSelectedCar] = React.useState<CarItem | null>(null)
-
-  const navigateTo = React.useCallback((page: PageRoute) => {
-    setViewPage(page)
-    const targetUrl = page === "home" ? "/" : `/${page}`
-    if (window.location.pathname !== targetUrl) {
-      window.history.pushState({ page }, "", targetUrl)
-    }
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }, [])
 
   // Listen to browser Back / Forward buttons
   React.useEffect(() => {
     const handlePopState = () => {
-      setViewPage(getPageFromPath())
+      setRouteState(parsePath())
     }
     window.addEventListener("popstate", handlePopState)
     return () => window.removeEventListener("popstate", handlePopState)
+  }, [])
+
+  const navigateTo = React.useCallback((page: PageRoute, slug?: string) => {
+    setRouteState({ page, slug })
+    let targetUrl = "/"
+    if (page === "detail" && slug) {
+      targetUrl = `/armada/${slug}`
+    } else if (page === "booking" && slug) {
+      targetUrl = `/armada/${slug}/booking`
+    } else if (page !== "home") {
+      targetUrl = `/${page}`
+    }
+    if (window.location.pathname !== targetUrl) {
+      window.history.pushState({ page, slug }, "", targetUrl)
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }, [])
 
   const handleNavigateAbout = React.useCallback(() => {
@@ -84,15 +114,13 @@ function MainApp() {
 
   const handleSelectCar = React.useCallback((car: CarItem) => {
     setSelectedCar(car)
-    setViewPage("detail")
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }, [])
+    navigateTo("detail", car.slug)
+  }, [navigateTo])
 
   const handleProceedToBooking = React.useCallback((car: CarItem) => {
     setSelectedCar(car)
-    setViewPage("booking")
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }, [])
+    navigateTo("booking", car.slug)
+  }, [navigateTo])
 
   const brandName = "Puncak Drive"
 
@@ -105,6 +133,15 @@ function MainApp() {
     initialData: [],
   })
 
+  // Active car object resolved from slug or state
+  const activeCar = React.useMemo(() => {
+    if (selectedCar) return selectedCar
+    if (routeState.slug) {
+      return cars.find((c) => c.slug === routeState.slug || c.id === routeState.slug) || null
+    }
+    return null
+  }, [selectedCar, routeState.slug, cars])
+
   const handleSearch = React.useCallback((searchParams: typeof searchFilter) => {
     setSearchFilter(searchParams)
     const catalogElement = document.getElementById("catalog")
@@ -113,7 +150,7 @@ function MainApp() {
     }
   }, [])
 
-  if (viewPage === "about") {
+  if (routeState.page === "about") {
     return (
       <div className="dark min-h-screen bg-background text-foreground flex flex-col justify-between">
         <div>
@@ -137,7 +174,7 @@ function MainApp() {
     )
   }
 
-  if (viewPage === "terms") {
+  if (routeState.page === "terms") {
     return (
       <div className="dark min-h-screen bg-background text-foreground flex flex-col justify-between">
         <div>
@@ -160,7 +197,7 @@ function MainApp() {
     )
   }
 
-  if (viewPage === "privacy") {
+  if (routeState.page === "privacy") {
     return (
       <div className="dark min-h-screen bg-background text-foreground flex flex-col justify-between">
         <div>
@@ -183,7 +220,7 @@ function MainApp() {
     )
   }
 
-  if (viewPage === "cookies") {
+  if (routeState.page === "cookies") {
     return (
       <div className="dark min-h-screen bg-background text-foreground flex flex-col justify-between">
         <div>
@@ -206,7 +243,7 @@ function MainApp() {
     )
   }
 
-  if (viewPage === "sitemap") {
+  if (routeState.page === "sitemap") {
     return (
       <div className="dark min-h-screen bg-background text-foreground flex flex-col justify-between">
         <div>
@@ -229,35 +266,29 @@ function MainApp() {
     )
   }
 
-  if (viewPage === "detail" && selectedCar) {
+  if (routeState.page === "detail" && activeCar) {
     return (
       <div className="dark min-h-screen bg-background text-foreground">
         <CarDetailPage
-          car={selectedCar}
-          onBack={() => {
-            setViewPage("home")
-            window.scrollTo({ top: 0, behavior: "smooth" })
-          }}
+          car={activeCar}
+          onBack={handleNavigateHome}
           onProceedToBooking={(car) => {
-            setSelectedCar(car)
-            setViewPage("booking")
-            window.scrollTo({ top: 0, behavior: "smooth" })
+            handleProceedToBooking(car)
           }}
         />
       </div>
     )
   }
 
-  if (viewPage === "booking" && selectedCar) {
+  if (routeState.page === "booking" && activeCar) {
     return (
       <div className="dark min-h-screen bg-background text-foreground">
         <BookingPage
-          car={selectedCar}
+          car={activeCar}
           initialLocation={searchFilter.pickupLocation || searchFilter.location}
           initialDate={searchFilter.date ? new Date(searchFilter.date) : undefined}
           onBack={() => {
-            setViewPage("detail")
-            window.scrollTo({ top: 0, behavior: "smooth" })
+            handleSelectCar(activeCar)
           }}
         />
       </div>
