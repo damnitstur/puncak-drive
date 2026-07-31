@@ -43,7 +43,7 @@
     "popularBtn": "Terpopuler (Popular)"
   },
   "detail": {
-    "back": "Kembali ke Katalog Armada",
+    "back": "Kembali",
     "noticeTitle": "Layanan Khusus Sewa Mobil + Driver (Tanpa Lepas Kunci)",
     "noticeDesc": "Seluruh armada Puncak Drive disewakan Wajib Termasuk Driver Professional. Kami tidak melayani sewa lepas kunci demi kenyamanan dan keselamatan perjalanan Anda di rute Puncak & sekitarnya.",
     "driverIncluded": "+ Driver Included",
@@ -59,7 +59,7 @@
     "transmission": "Tipe Transmisi",
     "hygiene": "Kondisi Kebersihan",
     "hygieneVal": "100% Bersih & Harum",
-    "inclusionsTitle": "Rincian Fasilitas Paket Sewa",
+    "inclusionsTitle": "Rincian Paket Sewa",
     "serviceArea": "Wilayah Jabodatebek",
     "includedHeading": "Termasuk Dalam Harga:",
     "incCar": "Unit Mobil Siap Pakai",
@@ -79,7 +79,7 @@
     "noPrepayment": "Tanpa pembayaran di muka."
   },
   "booking": {
-    "back": "Kembali ke Detail Armada",
+    "back": "Kembali",
     "badge": "Formulir Pemesanan Resmi",
     "title": "Reservasi Sewa Mobil",
     "subtitle": "Lengkapi rincian tanggal dan lokasi penjemputan untuk mengonfirmasi pesanan Anda via WhatsApp.",

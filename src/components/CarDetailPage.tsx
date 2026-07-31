@@ -57,11 +57,12 @@ export default function CarDetailPage({
   const bookedDates = getBookedDates(car.id)
 
   return (
-    <div className="min-h-screen py-10 sm:py-16 pb-28 sm:pb-28 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto space-y-8">
-        <div>
+    <div className="min-h-screen py-10 sm:py-16 pb-28">
+      <div className="px-0 md:px-4 lg:px-6 xl:px-12 space-y-8 max-w-7xl xl:mx-auto">
+        <div className="px-4">
           <Button
             variant="ghost"
+            size="sm"
             onClick={onBack}
           >
             <HugeiconsIcon
@@ -70,7 +71,7 @@ export default function CarDetailPage({
             {t("detail.back")}
           </Button>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-[0.5fr_1fr_0.5fr] h-full relative mx-auto gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.5fr_1fr_0.5fr] h-full relative gap-4 items-start">
           <div className="hidden lg:block h-full relative">
             <div className="sticky top-4 grid gap-4">
               <div className="flex rounded-xl aspect-square bg-muted w-full border justify-center items-center">
@@ -78,28 +79,11 @@ export default function CarDetailPage({
                   banner space
                 </p>
               </div>
-              <div className="flex rounded-xl aspect-square bg-muted w-full border justify-center items-center">
-                <p>
-                  space ads is Available
-                </p>
-              </div>
             </div>
           </div>
-          {/* LEFT COLUMN: Car Image Showcase (6 Cols) */}
-          <div className="lg:col-2/2 space-y-4 grid gap-4 relative h-full">
-            <div className="sticky top-0 p-4 sm:p-5 rounded bg-red-50 z-50 border border-destructive/30 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-destructive">
-              <div className="p-2.5 bg-destructive/20 rounded-xl shrink-0">
-                <HugeiconsIcon icon={InformationCircleIcon} className="w-6 h-6 text-destructive" />
-              </div>
-              <div className="space-y-0.5">
-                <h4 className="text-xs font-bold uppercase tracking-wider">
-                  {t("detail.noticeTitle")}
-                </h4>
-                <p className="text-xs text-destructive leading-relaxed">
-                  {t("detail.noticeDesc")}
-                </p>
-              </div>
-            </div>
+
+          <div className="lg:col-2/2 p-4 lg:p-0 space-y-4 grid gap-4 pb-0 lg:pb-28 relative h-full">
+
 
             <Card className="overflow-hidden">
               <div className="relative aspect-[16/10] bg-muted/60 flex items-center justify-center p-8 border-b border-border">
@@ -158,12 +142,13 @@ export default function CarDetailPage({
 
             {/* Inclusions & Exclusions Card */}
             <div className="space-y-4">
-              <div className="flex gap-3 justify-between">
+              <div className="flex flex-col lg:flex-row gap-3 justify-between">
                 <h3 className="text-xl font-bold text-foreground">
                   {t("detail.inclusionsTitle")}
                 </h3>
                 <Badge
                   variant="outline"
+                  className="w-fit"
                 >
                   {t("detail.serviceArea")}
                 </Badge>
@@ -206,12 +191,13 @@ export default function CarDetailPage({
               </div>
             </div>
             <div className="space-y-4">
-              <div className="flex gap-3 justify-between">
+              <div className="flex flex-col lg:flex-row gap-3 justify-between">
                 <h3 className="text-xl font-bold text-foreground">
                   {t("detail.featuresTitle", { name: car.name })}
                 </h3>
                 <Badge
                   variant="outline"
+                  className="w-fit"
                 >
                   {t("detail.specTitle")}
                 </Badge>
@@ -244,10 +230,22 @@ export default function CarDetailPage({
                 </div>
               </div>
             </div>
+            <div className="p-4 sm:p-5 rounded bg-red-50 z-50 border border-destructive/30 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-destructive">
+              <div className="p-2.5 bg-destructive/20 rounded-xl shrink-0">
+                <HugeiconsIcon icon={InformationCircleIcon} className="w-6 h-6 text-destructive" />
+              </div>
+              <div className="space-y-0.5">
+                <h4 className="text-xs font-bold uppercase tracking-wider">
+                  {t("detail.noticeTitle")}
+                </h4>
+                <p className="text-xs text-destructive leading-relaxed">
+                  {t("detail.noticeDesc")}
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* RIGHT COLUMN: Technical Specs & Action (6 Cols) */}
-          <div className="lg:col-3/3 space-y-6 lg:sticky top-0">
+          <div className="lg:col-3/3 p-4 lg:p-0 space-y-6 lg:sticky top-0">
             <div className="py-4 space-y-6">
               {/* Availability Calendar */}
               <div className="space-y-3">
@@ -308,7 +306,7 @@ export default function CarDetailPage({
       </div>
 
       {/* Sticky WhatsApp Bottom Navigation Bar */}
-      <CarDetailWhatsAppBar car={car} onProceedToBooking={onProceedToBooking} />
+      <CarDetailWhatsAppBar car={car} />
     </div>
   )
 }
